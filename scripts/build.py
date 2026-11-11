@@ -98,6 +98,24 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
 
     checkout(data["resukisu"]["repository"], data["resukisu"]["commit"], source / "KernelSU", False)
     (source / "drivers/kernelsu").symlink_to("../KernelSU/kernel", target_is_directory=True)
+
+    kcfg = source / "KernelSU" / "kernel" / "Kconfig"
+    if kcfg.exists():
+        text = kcfg.read_text(encoding="utf-8")
+        if "config KSU_SUSFS" in text and "standalone" not in text:
+            lines = text.splitlines()
+            i = next(k for k, l in enumerate(lines) if l.strip() == "config KSU_SUSFS")
+            lines[i:i] = ["# SUSFS standalone", "endchoice", ""]
+            j = next((k for k in range(i + 4, len(lines)) if lines[k].strip() == "endchoice"), None)
+            if j is not None:
+                del lines[j]
+            for k in range(i, min(i + 6, len(lines))):
+                if lines[k].strip().startswith("depends on THREAD_INFO_IN_TASK"):
+                    lines[k] = "\tdepends on KSU && THREAD_INFO_IN_TASK && 64BIT"
+                    break
+            kcfg.write_text("\n".join(lines) + "\n", encoding="utf-8")
+            print("KSU_SUSFS moved out of hook choice", flush=True)
+
     for path, addition in (
         ("drivers/Makefile", "\nobj-$(CONFIG_KSU) += kernelsu/\n"),
         ("drivers/Kconfig", '\nsource "drivers/kernelsu/Kconfig"\n'),
