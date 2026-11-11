@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
-    timeout-minutes: 120
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
 
@@ -27,50 +27,54 @@ jobs:
         run: python3 scripts/build.py --device oneplus-9-pro --os ${{ inputs.os }}
 
       - name: Repack boot.img (replace kernel only)
+        env:
+          ROM: ${{ inputs.os }}
         run: |
           python3 - <<'PY'
           import hashlib, json, os, pathlib, shutil, subprocess, urllib.request, zipfile
 
-          BASE_URL = ("https://github.com/daxiaamu/ReSukiSU-OnePlus-Legacy/releases/download/"
-                      "v0.3.0/oneplus-9-pro-coloros-LE2120_14.0.0.1901-CN01-v0.3.0.zip")
+          BASE = {"coloros": ("https://github.com/daxiaamu/ReSukiSU-OnePlus-Legacy/releases/download/"
+                              "v0.3.0/oneplus-9-pro-coloros-LE2120_14.0.0.1901-CN01-v0.3.0.zip"),
+                  "oxygenos": ("https://github.com/daxiaamu/ReSukiSU-OnePlus-Legacy/releases/download/"
+                               "v0.3.0/oneplus-9-pro-oxygenos-LE2121_14.0.0.1902-EX01-v0.3.0.zip")}
           ROM = os.environ.get("ROM", "coloros")
-
-          work = pathlib.Path(".work"); work.mkdir(exist_ok=True)
+          root = pathlib.Path(".").resolve()
+          work = (root / ".work-repack"); work.mkdir(exist_ok=True)
 
           zp = work / "base.zip"
           if not zp.is_file():
-              urllib.request.urlretrieve(BASE_URL, zp)
+              urllib.request.urlretrieve(BASE[ROM], zp)
           with zipfile.ZipFile(zp) as z:
               z.extract("boot.img", work)
-          boot = work / "boot.img"
-          print("base boot:", boot.stat().st_size, hashlib.sha256(boot.read_bytes()).hexdigest())
+          boot = (work / "boot.img").resolve()
+          print("base boot:", boot.stat().st_size, hashlib.sha256(boot.read_bytes()).hexdigest(), flush=True)
 
-          built = pathlib.Path("out/oneplus-9-pro") / ROM
-          image = built / "Image"
+          image = (root / "out/oneplus-9-pro" / ROM / "Image").resolve()
           if not image.is_file():
               raise SystemExit("compiled Image missing: " + str(image))
-          print("kernel:", image.stat().st_size, hashlib.sha256(image.read_bytes()).hexdigest())
+          print("kernel:", image.stat().st_size, hashlib.sha256(image.read_bytes()).hexdigest(), flush=True)
 
-          tools = json.loads(pathlib.Path("tools.lock.json").read_text())["magiskboot"]
+          tools = json.loads((root / "tools.lock.json").read_text())["magiskboot"]
           apk = work / "magisk.apk"
           if not apk.is_file():
               urllib.request.urlretrieve(tools["url"], apk)
           with zipfile.ZipFile(apk) as z:
               (work / "magiskboot").write_bytes(z.read(tools["member"]))
-          os.chmod(work / "magiskboot", 0o755)
+          magiskboot = (work / "magiskboot").resolve()
+          os.chmod(magiskboot, 0o755)
 
-          unpack = work / "unpack"; unpack.mkdir(exist_ok=True)
-          subprocess.run([str(work / "magiskboot"), "unpack", "-h", str(boot)], cwd=unpack, check=True)
+          unpack = (work / "unpack").resolve(); unpack.mkdir(exist_ok=True)
+          subprocess.run([str(magiskboot), "unpack", "-h", str(boot)], cwd=str(unpack), check=True)
           keep = {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
                   for p in unpack.iterdir() if p.is_file() and p.name not in ("kernel", "header")}
-          print("preserved:", sorted(keep))
+          print("preserved:", sorted(keep), flush=True)
 
           shutil.copyfile(image, unpack / "kernel")
-          new_boot = work / "new_boot.img"
-          subprocess.run([str(work / "magiskboot"), "repack", str(boot), str(new_boot)], cwd=unpack, check=True)
+          new_boot = (work / "new_boot.img").resolve()
+          subprocess.run([str(magiskboot), "repack", str(boot), str(new_boot)], cwd=str(unpack), check=True)
 
-          verify = work / "verify"; verify.mkdir(exist_ok=True)
-          subprocess.run([str(work / "magiskboot"), "unpack", "-h", str(new_boot)], cwd=verify, check=True)
+          verify = (work / "verify").resolve(); verify.mkdir(exist_ok=True)
+          subprocess.run([str(magiskboot), "unpack", "-h", str(new_boot)], cwd=str(verify), check=True)
           after = {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in verify.iterdir() if p.is_file() and p.name not in ("kernel", "header")}
           if keep != after:
@@ -80,11 +84,11 @@ jobs:
           if hashlib.sha256((verify / "kernel").read_bytes()).hexdigest() != hashlib.sha256(image.read_bytes()).hexdigest():
               raise SystemExit("kernel in boot.img mismatch")
 
-          final = pathlib.Path("boot.img")
+          final = (root / "boot.img")
           shutil.copyfile(new_boot, final)
           if final.stat().st_size > boot.stat().st_size:
               raise SystemExit("new boot larger than base")
-          print("RESULT boot.img", final.stat().st_size, hashlib.sha256(final.read_bytes()).hexdigest())
+          print("RESULT boot.img", final.stat().st_size, hashlib.sha256(final.read_bytes()).hexdigest(), flush=True)
           PY
 
       - name: Upload boot.img
