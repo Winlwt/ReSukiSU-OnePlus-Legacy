@@ -75,6 +75,11 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
             target.symlink_to(os.readlink(item))
         else:
             shutil.copyfile(item, target)
+    susfs_patch = ROOT / "patches" / "susfs-5.4.patch"
+    if susfs_patch.exists():
+        print("Applying susfs patch BEFORE KernelSU patches", flush=True)
+        subprocess.run(["patch", "-p1", "-F3", "--forward", "-i", str(susfs_patch)],
+                       cwd=source, check=False, text=True)
     patch = ROOT / "patches" / (PATCHES[name] + ".patch")
     run("git", "apply", "--check", patch, cwd=source)
     run("git", "apply", patch, cwd=source)
@@ -82,9 +87,7 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
     if compat_patch.exists():
         run("git", "apply", "--check", compat_patch, cwd=source)
         run("git", "apply", compat_patch, cwd=source)
-    susfs_patch = ROOT / "patches" / "susfs-5.4.patch"
-    if susfs_patch.exists():
-        run("git", "apply", "-3", "--exclude=fs/proc/bootconfig.c", susfs_patch, cwd=source)
+
     checkout(data["resukisu"]["repository"], data["resukisu"]["commit"], source / "KernelSU", False)
     (source / "drivers/kernelsu").symlink_to("../KernelSU/kernel", target_is_directory=True)
     for path, addition in (
