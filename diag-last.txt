@@ -1,129 +1,430 @@
-===== first errors =====
-90:Hunk #3 FAILED at 60.
-91:1 out of 3 hunks FAILED -- saving rejects to file fs/proc/fd.c.rej
-3924:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: fs] Error 2
-4681:make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
-4715:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: drivers] Error 2
-4717:make: *** [Makefile:190: sub-make] Error 2
+===== error lines =====
+3345:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/fs/notify/fdinfo.c:106:42: error: use of undeclared identifier 'TASK_STRUCT_NON_ROOT_USER_APP_PROC'
+3348:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/fs/notify/fdinfo.c:107:31: error: use of undeclared identifier 'INODE_STATE_SUS_KSTAT'
+3352:make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:293: fs/notify/fdinfo.o] Error 1
+3353:make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:572: fs/notify] Error 2
+3379:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/Makefile:1956: fs] Error 2
+4339:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs_def.h:107:24: error: member reference base type 'int' is not a structure or union
+4342:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs_def.h:136:17: error: member reference base type 'int' is not a structure or union
+4346:make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:293: drivers/kernelsu/core/init.o] Error 1
+4347:make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
+4372:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/Makefile:1956: drivers] Error 2
+4374:make: *** [Makefile:190: sub-make] Error 2
 
-===== last 120 lines =====
-  CC      drivers/gpu/drm/drm_lease.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_oncell/synaptics_tcm_device.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_S3910/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_qcom.o
-  CC      drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_test_reporting.o
-  CC      drivers/gpu/drm/drm_writeback.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_oncell/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/synaptics_touch_panel_remote.o
-  AR      drivers/input/touchscreen/synaptics_dsx/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek_common.o
-  CC      drivers/gpu/drm/drm_client.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/synaptics_common.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_ic.o
-  CC      drivers/input/input-compat.o
-  CC      drivers/gpu/drm/drm_client_modeset.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/built-in.a
-  CC      drivers/iommu/iommu.o
-  CC      drivers/gpu/drm/drm_atomic_uapi.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_mp.o
-  CC      drivers/input/touchscreen/of_touchscreen.o
-  CC      drivers/gpu/drm/drm_hdcp.o
-  CC      drivers/iommu/iommu-traces.o
-  CC      drivers/irqchip/irqchip.o
-  CC      drivers/irqchip/irq-sun4i.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_fw.o
-  CC      drivers/gpu/drm/drm_ioc32.o
-  CC      drivers/irqchip/irq-sunxi-nmi.o
-  CC      drivers/iommu/iommu-sysfs.o
-  CC      drivers/irqchip/irq-gic.o
-  CC      drivers/gpu/drm/drm_gem_cma_helper.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_node.o
-  CC      drivers/iommu/dma-iommu.o
-  CC      drivers/irqchip/irq-gic-common.o
-  CC      drivers/irqchip/irq-gic-v2m.o
-  CC      drivers/gpu/drm/drm_gem_shmem_helper.o
-  CC      drivers/irqchip/irq-gic-v3.o
-  CC      drivers/iommu/msm_dma_iommu_mapping.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/built-in.a
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/util_interface/touch_interfaces.o
-  CC      drivers/gpu/drm/drm_panel.o
-  CC      drivers/iommu/io-pgtable.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_comon_api/touch_comon_api.o
-  CC      drivers/irqchip/irq-gic-v3-mbi.o
-  CC      drivers/gpu/drm/drm_of.o
-  CC      drivers/iommu/io-pgtable-arm-v7s.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_healthinfo/touchpanel_healthinfo.o
-  CC      drivers/irqchip/irq-gic-v3-its.o
-  CC      drivers/iommu/io-pgtable-arm.o
-  CC      drivers/gpu/drm/drm_mipi_dsi.o
-  CC      drivers/iommu/iova.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_healthinfo/touchpanel_exception.o
-  CC      drivers/irqchip/irq-gic-v3-its-platform-msi.o
-  CC      drivers/gpu/drm/drm_panel_orientation_quirks.o
-  CC      drivers/irqchip/irq-gic-v4.o
-  AR      drivers/gpu/drm/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_autotest/touchpanel_autotest.o
-  CC      drivers/irqchip/irq-gic-v3-its-pci-msi.o
-  AR      drivers/gpu/built-in.a
-  CC      drivers/iommu/io-pgtable-fast.o
-  CC      drivers/irqchip/irq-partition-percpu.o
--- BakaSU version code: 35259
--- BakaSU version name: v4.1.0-548d1dda
--- Supported Managers: KernelSU Official, KOWSU, BakaSU 
--- KERNEL_VERSION: 5.4
--- KERNEL_TYPE: GKI 1.0
--- BakaSU: using SuSFS Inline hook
--- You are using SUSFS, if you face any issues, please MAKE SURE you are using LATEST SUSFS KERNEL SIDE before submit issue to BakaSU.
--- We keep tracking simonpunk's latest changes, and don't maintain ANY backward compatibility for old version of susfs.
--- You lost ksu_handle_setresuid hook in your kernel
--- Please submit issue to your SUSFS patches author.
-/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/KernelSU/kernel/tools/inline_hook_check.mk:40: *** You should integrate BakaSU in your kernel. .  Stop.
-make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
+===== error context =====
+----- around line 3345 -----
+  CC      fs/nls/nls_iso8859-14.o
+  CC      kernel/tuning/frame_info.o
+  CC      fs/nls/nls_iso8859-15.o
+  CC      fs/notify/mark.o
+  CC      kernel/tuning/cluster_boost.o
+  CC      fs/nls/nls_koi8-r.o
+  CC      block/blk-merge.o
+  CC      fs/nls/nls_koi8-u.o
+  CC      fs/nls/nls_koi8-ru.o
+  CC      fs/notify/fdinfo.o
+  CC      fs/nls/nls_utf8.o
+  CC      fs/nls/mac-celtic.o
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/fs/notify/fdinfo.c:106:42: error: use of undeclared identifier 'TASK_STRUCT_NON_ROOT_USER_APP_PROC'
+                if (likely(current->susfs_task_state & TASK_STRUCT_NON_ROOT_USER_APP_PROC) &&
+                                                       ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/fs/notify/fdinfo.c:107:31: error: use of undeclared identifier 'INODE_STATE_SUS_KSTAT'
+                                unlikely(inode->i_state & INODE_STATE_SUS_KSTAT)) {
+                                                          ^
+2 errors generated.
+----- around line 3348 -----
+  CC      fs/notify/mark.o
+  CC      kernel/tuning/cluster_boost.o
+  CC      fs/nls/nls_koi8-r.o
+  CC      block/blk-merge.o
+  CC      fs/nls/nls_koi8-u.o
+  CC      fs/nls/nls_koi8-ru.o
+  CC      fs/notify/fdinfo.o
+  CC      fs/nls/nls_utf8.o
+  CC      fs/nls/mac-celtic.o
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/fs/notify/fdinfo.c:106:42: error: use of undeclared identifier 'TASK_STRUCT_NON_ROOT_USER_APP_PROC'
+                if (likely(current->susfs_task_state & TASK_STRUCT_NON_ROOT_USER_APP_PROC) &&
+                                                       ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/fs/notify/fdinfo.c:107:31: error: use of undeclared identifier 'INODE_STATE_SUS_KSTAT'
+                                unlikely(inode->i_state & INODE_STATE_SUS_KSTAT)) {
+                                                          ^
+2 errors generated.
+make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:293: fs/notify/fdinfo.o] Error 1
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:572: fs/notify] Error 2
 make[2]: *** Waiting for unfinished jobs....
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_prevention/touchpanel_prevention.o
-  CC      drivers/iommu/dma-mapping-fast.o
-  CC      drivers/input/input-mt.o
-  CC      drivers/irqchip/irq-mbigen.o
-  CC      drivers/irqchip/msm_show_resume_irq.o
+----- around line 3352 -----
+  CC      fs/nls/nls_koi8-u.o
+  CC      fs/nls/nls_koi8-ru.o
+  CC      fs/notify/fdinfo.o
+  CC      fs/nls/nls_utf8.o
+  CC      fs/nls/mac-celtic.o
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/fs/notify/fdinfo.c:106:42: error: use of undeclared identifier 'TASK_STRUCT_NON_ROOT_USER_APP_PROC'
+                if (likely(current->susfs_task_state & TASK_STRUCT_NON_ROOT_USER_APP_PROC) &&
+                                                       ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/fs/notify/fdinfo.c:107:31: error: use of undeclared identifier 'INODE_STATE_SUS_KSTAT'
+                                unlikely(inode->i_state & INODE_STATE_SUS_KSTAT)) {
+                                                          ^
+2 errors generated.
+make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:293: fs/notify/fdinfo.o] Error 1
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:572: fs/notify] Error 2
+make[2]: *** Waiting for unfinished jobs....
+  CC      kernel/tuning/frame_boost.o
+  CC      drivers/amba/bus.o
+  CC      fs/nls/mac-centeuro.o
+  CC      block/blk-softirq.o
+----- around line 3353 -----
+  CC      fs/nls/nls_koi8-ru.o
+  CC      fs/notify/fdinfo.o
+  CC      fs/nls/nls_utf8.o
+  CC      fs/nls/mac-celtic.o
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/fs/notify/fdinfo.c:106:42: error: use of undeclared identifier 'TASK_STRUCT_NON_ROOT_USER_APP_PROC'
+                if (likely(current->susfs_task_state & TASK_STRUCT_NON_ROOT_USER_APP_PROC) &&
+                                                       ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/fs/notify/fdinfo.c:107:31: error: use of undeclared identifier 'INODE_STATE_SUS_KSTAT'
+                                unlikely(inode->i_state & INODE_STATE_SUS_KSTAT)) {
+                                                          ^
+2 errors generated.
+make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:293: fs/notify/fdinfo.o] Error 1
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:572: fs/notify] Error 2
+make[2]: *** Waiting for unfinished jobs....
+  CC      kernel/tuning/frame_boost.o
+  CC      drivers/amba/bus.o
+  CC      fs/nls/mac-centeuro.o
+  CC      block/blk-softirq.o
+  CC      fs/nls/mac-croatian.o
+----- around line 3379 -----
+  CC      fs/nls/mac-greek.o
+  CC      drivers/android/binder.o
+  CC      fs/nls/mac-iceland.o
+  CC      block/blk-lib.o
+  CC      fs/nls/mac-inuit.o
+  CC      fs/nls/mac-romanian.o
+  CC      fs/nls/mac-roman.o
+  CC      block/blk-mq.o
+  AR      kernel/tuning/built-in.a
+  CC      fs/nls/mac-turkish.o
+  CC      kernel/uad/cpufreq_uag_main.o
+  AR      fs/nls/built-in.a
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/Makefile:1956: fs] Error 2
+make[1]: *** Waiting for unfinished jobs....
+  AR      drivers/auxdisplay/built-in.a
+  CC      drivers/android/binder_alloc.o
+  CC      kernel/fork.o
+  CC      block/blk-mq-tag.o
+  CC      kernel/uad/nonlinear_opp_cap.o
+----- around line 4339 -----
+  CC      drivers/mailbox/hi6220-mailbox.o
+  CC      drivers/leds/led-class-flash.o
+  CC      drivers/mailbox/msm_qmp.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_autotest/touchpanel_autotest.o
+  GEN     drivers/kernelsu/compat/syscall_no.h
+  AS      drivers/kernelsu/preinit/blob.o
+  CC      drivers/kernelsu/core/init.o
+  CC      drivers/leds/led-class-multicolor.o
+  AR      drivers/mailbox/built-in.a
   CC      drivers/input/touchscreen/atmel_mxt_ts.o
-  CC      drivers/iommu/of_iommu.o
-  CC      drivers/irqchip/qcom-pdc.o
-  AR      drivers/irqchip/built-in.a
-  CC      drivers/iommu/arm-smmu.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_common_driver.o
-  CC      drivers/input/touchscreen/usbtouchscreen.o
+In file included from /home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/drivers/kernelsu/core/init.c:13:
+In file included from /home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs.h:9:
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs_def.h:107:24: error: member reference base type 'int' is not a structure or union
+        return ((current_uid().val % 100000) >= 10000);
+                 ~~~~~~~~~~~~~^~~~
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs_def.h:136:17: error: member reference base type 'int' is not a structure or union
+                        current_uid().val >= 10000);
+                        ~~~~~~~~~~~~~^~~~
+2 errors generated.
+----- around line 4342 -----
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_autotest/touchpanel_autotest.o
+  GEN     drivers/kernelsu/compat/syscall_no.h
+  AS      drivers/kernelsu/preinit/blob.o
+  CC      drivers/kernelsu/core/init.o
+  CC      drivers/leds/led-class-multicolor.o
+  AR      drivers/mailbox/built-in.a
+  CC      drivers/input/touchscreen/atmel_mxt_ts.o
+In file included from /home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/drivers/kernelsu/core/init.c:13:
+In file included from /home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs.h:9:
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs_def.h:107:24: error: member reference base type 'int' is not a structure or union
+        return ((current_uid().val % 100000) >= 10000);
+                 ~~~~~~~~~~~~~^~~~
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs_def.h:136:17: error: member reference base type 'int' is not a structure or union
+                        current_uid().val >= 10000);
+                        ~~~~~~~~~~~~~^~~~
+2 errors generated.
+make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:293: drivers/kernelsu/core/init.o] Error 1
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
   CC      drivers/input/input-poller.o
-  CC      drivers/input/ff-core.o
-  CC      drivers/iommu/arm-smmu-impl.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_proc.o
-  CC      drivers/iommu/arm-smmu-qcom.o
+----- around line 4346 -----
+  CC      drivers/leds/led-class-multicolor.o
+  AR      drivers/mailbox/built-in.a
+  CC      drivers/input/touchscreen/atmel_mxt_ts.o
+In file included from /home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/drivers/kernelsu/core/init.c:13:
+In file included from /home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs.h:9:
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs_def.h:107:24: error: member reference base type 'int' is not a structure or union
+        return ((current_uid().val % 100000) >= 10000);
+                 ~~~~~~~~~~~~~^~~~
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs_def.h:136:17: error: member reference base type 'int' is not a structure or union
+                        current_uid().val >= 10000);
+                        ~~~~~~~~~~~~~^~~~
+2 errors generated.
+make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:293: drivers/kernelsu/core/init.o] Error 1
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
+  CC      drivers/input/input-poller.o
+make[2]: *** Waiting for unfinished jobs....
+  CC      drivers/leds/led-triggers.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_prevention/touchpanel_prevention.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_common_driver.o
+----- around line 4347 -----
+  AR      drivers/mailbox/built-in.a
+  CC      drivers/input/touchscreen/atmel_mxt_ts.o
+In file included from /home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/drivers/kernelsu/core/init.c:13:
+In file included from /home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs.h:9:
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs_def.h:107:24: error: member reference base type 'int' is not a structure or union
+        return ((current_uid().val % 100000) >= 10000);
+                 ~~~~~~~~~~~~~^~~~
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs_def.h:136:17: error: member reference base type 'int' is not a structure or union
+                        current_uid().val >= 10000);
+                        ~~~~~~~~~~~~~^~~~
+2 errors generated.
+make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:293: drivers/kernelsu/core/init.o] Error 1
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
+  CC      drivers/input/input-poller.o
+make[2]: *** Waiting for unfinished jobs....
+  CC      drivers/leds/led-triggers.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_prevention/touchpanel_prevention.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_common_driver.o
+  CC      drivers/leds/leds-qti-flash.o
+----- around line 4372 -----
   CC      drivers/input/touchscreen/oplus_touchscreen_v2/tp_ioctl.o
-  CC      drivers/iommu/arm-smmu-debug.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/message_list.o
   CC      drivers/input/ff-memless.o
-  CC      drivers/iommu/iommu-logger.o
-  CC      drivers/input/input-leds.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/message_list.o
   CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_pen/touch_pen_core.o
+  CC      drivers/input/input-leds.o
   CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_pen/touch_pen_algo.o
-  CC      drivers/input/evdev.o
-  AR      drivers/iommu/built-in.a
   CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_tui_support/touchpanel_tui_support.o
   CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_notify/touchpanel_event_notify.o
+  CC      drivers/input/evdev.o
   AR      drivers/input/touchscreen/oplus_touchscreen_v2/built-in.a
   AR      drivers/input/touchscreen/built-in.a
   AR      drivers/input/built-in.a
-make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: drivers] Error 2
-make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/obj'
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/Makefile:1956: drivers] Error 2
+make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/obj'
 make: *** [Makefile:190: sub-make] Error 2
-make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4'
+make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4'
 Traceback (most recent call last):
-  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 221, in <module>
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 240, in <module>
     build(args.device, args.config, args.os, args.diagnostics_only)
-  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 189, in build
+----- around line 4374 -----
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/message_list.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_pen/touch_pen_core.o
+  CC      drivers/input/input-leds.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_pen/touch_pen_algo.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_tui_support/touchpanel_tui_support.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_notify/touchpanel_event_notify.o
+  CC      drivers/input/evdev.o
+  AR      drivers/input/touchscreen/oplus_touchscreen_v2/built-in.a
+  AR      drivers/input/touchscreen/built-in.a
+  AR      drivers/input/built-in.a
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/Makefile:1956: drivers] Error 2
+make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/obj'
+make: *** [Makefile:190: sub-make] Error 2
+make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4'
+Traceback (most recent call last):
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 240, in <module>
+    build(args.device, args.config, args.os, args.diagnostics_only)
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 208, in build
+    run(*options, "-j" + str(os.cpu_count() or 2), "Image", env=env)
+
+===== hook / susfs / ksu messages =====
+32:Applying susfs patch BEFORE KernelSU patches
+122:installed header include/linux/susfs.h
+123:installed header include/linux/susfs_def.h
+124:installed header fs/susfs.c
+127:+ git init --quiet /home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/KernelSU
+134:KSU_SUSFS moved out of hook choice
+203:OplusKernelEnvConfig.mk:127: make OPLUS_FEATURE_DNS_HOOK to be a macro here
+373:OplusKernelEnvConfig.mk:127: make OPLUS_FEATURE_DNS_HOOK to be a macro here
+421:  WRAP    arch/arm64/include/generated/asm/mm-arch-hooks.h
+1559:OplusKernelEnvConfig.mk:127: make OPLUS_FEATURE_DNS_HOOK to be a macro here
+1894:  CC      arch/arm64/kernel/secureguard/rootguard/oplus_security_hook.o
+1979:  CC      arch/arm64/kernel/secureguard/rootguard/oplus_hook_syscall.o
+2762:  CC      fs/crypto/hooks.o
+2907:  CC      security/selinux/hooks.o
+3346:                if (likely(current->susfs_task_state & TASK_STRUCT_NON_ROOT_USER_APP_PROC) &&
+3386:  CC      drivers/android/vendor_hooks.o
+4271:-- Supported Managers: KernelSU Official, KOWSU, BakaSU 
+4274:-- BakaSU: using Manual Hook
+4275:-- BakaSU/manual_hook: You are using LSM hooks for setuid hooks.
+4276:-- BakaSU/manual_hook: You are using LSM hooks for init rc hooks.
+4277:-- BakaSU/manual_hook: You are using input_handler for input hooks.
+4278:-- BakaSU/manual_hook: ksu_handle_execveat found
+4279:-- BakaSU/manual_hook: ksu_handle_faccessat found
+4280:-- BakaSU/manual_hook: ksu_handle_stat found
+4281:-- BakaSU/manual_hook: ksu_handle_newfstat_ret found
+4282:-- BakaSU/manual_hook: ksu_handle_fstat64_ret found
+4283:-- BakaSU/manual_hook: ksu_handle_sys_reboot found
+4307:-- BakaSU/compat: found hlist in security_hook_list
+4310:-- BakaSU/compat: found security_add_hooks
+4311:-- BakaSU/compat: ksu_handle_post_execve hook not found
+4318:  HOSTCC  drivers/kernelsu/tools/code_generation/syscall_no/syscall_no
+4320:  CC      drivers/kernelsu/preinit/preinit.o
+4326:  CC      drivers/kernelsu/preinit/runner.elf
+4331:  GEN     drivers/kernelsu/compat/syscall_no.h
+4332:  AS      drivers/kernelsu/preinit/blob.o
+4333:  CC      drivers/kernelsu/core/init.o
+4337:In file included from /home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/drivers/kernelsu/core/init.c:13:
+4338:In file included from /home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs.h:9:
+4339:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs_def.h:107:24: error: member reference base type 'int' is not a structure or union
+4342:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs_def.h:136:17: error: member reference base type 'int' is not a structure or union
+4346:make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:293: drivers/kernelsu/core/init.o] Error 1
+4347:make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
+
+===== last 150 lines =====
+  CC      drivers/irqchip/msm_show_resume_irq.o
+  CC      drivers/iommu/arm-smmu.o
+  CC      drivers/gpu/drm/drm_panel_orientation_quirks.o
+  CC      drivers/irqchip/qcom-pdc.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_ic.o
+  AR      drivers/irqchip/built-in.a
+  CC      drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_i2c.o
+  AR      drivers/gpu/drm/built-in.a
+  AR      drivers/gpu/built-in.a
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek_common.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_mp.o
+  CC      drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_core.o
+  CC      drivers/input/input-compat.o
+  CC      drivers/iommu/arm-smmu-impl.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/util_interface/touch_interfaces.o
+  CC      drivers/iommu/arm-smmu-qcom.o
+  CC      drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_rmi_dev.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_fw.o
+  CC      drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_fw_update.o
+  CC      drivers/iommu/arm-smmu-debug.o
+  CC      drivers/input/touchscreen/touch_custom/touch.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_node.o
+  CC      drivers/iommu/iommu-logger.o
+  AR      drivers/input/touchscreen/touch_custom/built-in.a
+  CC      drivers/input/input-mt.o
+  CC      drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_test_reporting.o
+  AR      drivers/iommu/built-in.a
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_comon_api/touch_comon_api.o
+  CC      drivers/input/touchscreen/of_touchscreen.o
+  AR      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/built-in.a
+  AR      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/built-in.a
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_healthinfo/touchpanel_healthinfo.o
+  AR      drivers/input/touchscreen/synaptics_dsx/built-in.a
+-- BakaSU version code: 35259
+-- BakaSU version name: v4.1.0-548d1dda-dirty
+-- Supported Managers: KernelSU Official, KOWSU, BakaSU 
+-- KERNEL_VERSION: 5.4
+-- KERNEL_TYPE: GKI 1.0
+-- BakaSU: using Manual Hook
+-- BakaSU/manual_hook: You are using LSM hooks for setuid hooks.
+-- BakaSU/manual_hook: You are using LSM hooks for init rc hooks.
+-- BakaSU/manual_hook: You are using input_handler for input hooks.
+-- BakaSU/manual_hook: ksu_handle_execveat found
+-- BakaSU/manual_hook: ksu_handle_faccessat found
+-- BakaSU/manual_hook: ksu_handle_stat found
+-- BakaSU/manual_hook: ksu_handle_newfstat_ret found
+-- BakaSU/manual_hook: ksu_handle_fstat64_ret found
+-- BakaSU/manual_hook: ksu_handle_sys_reboot found
+-- BakaSU/compat: current_sid found
+-- BakaSU/compat: selinux_state found
+-- BakaSU/compat: kernel_read found
+-- BakaSU/compat: kernel_write found
+-- BakaSU/compat: selinux_inode found
+-- BakaSU/compat: selinux_cred found
+-- BakaSU/compat: file_inode() found
+-- BakaSU/compat: ns_get_path found
+-- BakaSU/compat: modern dentry_open found
+  CC      drivers/leds/trigger/ledtrig-timer.o
+-- BakaSU/compat: ext4_unregister_sysfs found
+-- BakaSU/compat: f_op->read_iter found
+-- BakaSU/compat: iterate_dir found
+-- BakaSU/compat: modern static_key_interface found
+-- BakaSU/compat: d_inode found
+-- BakaSU/compat: inode_lock found
+-- BakaSU/compat: modern errno file found
+-- BakaSU/compat: overflow.h found
+-- BakaSU/compat: modern proc ns header file found
+-- BakaSU/compat: android spec POLICYDB_CONFIG_ANDROID_NETLINK_ROUTE found!!
+-- BakaSU/compat: android spec POLICYDB_CONFIG_ANDROID_NETLINK_GETNEIGH found!!
+-- BakaSU/compat: found modern selinux policydb
+-- BakaSU/compat: found sidtab as reference
+-- BakaSU/compat: found hlist in security_hook_list
+-- BakaSU/compat: found new setprocattr prototype
+-- BakaSU/compat: found required provide lsm name
+-- BakaSU/compat: found security_add_hooks
+-- BakaSU/compat: ksu_handle_post_execve hook not found
+-- BakaSU/compat: modern dentry_open found
+-- BakaSU/compat: extended_perms found
+-- BakaSU/compat: stricter mls_context_to_sid found
+-- BakaSU/compat: found hash indexed sidtab
+-- BakaSU/compat: found KERNEL_PARAM_OPS_FL_NOARG
+  AR      drivers/macintosh/built-in.a
+  HOSTCC  drivers/kernelsu/tools/code_generation/syscall_no/syscall_no
+  CC      drivers/mailbox/mailbox.o
+  CC      drivers/kernelsu/preinit/preinit.o
+  AR      drivers/leds/trigger/built-in.a
+  CC      drivers/leds/led-core.o
+  CC      drivers/mailbox/hi3660-mailbox.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_healthinfo/touchpanel_exception.o
+  CC      drivers/leds/led-class.o
+  CC      drivers/kernelsu/preinit/runner.elf
+  CC      drivers/mailbox/hi6220-mailbox.o
+  CC      drivers/leds/led-class-flash.o
+  CC      drivers/mailbox/msm_qmp.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_autotest/touchpanel_autotest.o
+  GEN     drivers/kernelsu/compat/syscall_no.h
+  AS      drivers/kernelsu/preinit/blob.o
+  CC      drivers/kernelsu/core/init.o
+  CC      drivers/leds/led-class-multicolor.o
+  AR      drivers/mailbox/built-in.a
+  CC      drivers/input/touchscreen/atmel_mxt_ts.o
+In file included from /home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/drivers/kernelsu/core/init.c:13:
+In file included from /home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs.h:9:
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs_def.h:107:24: error: member reference base type 'int' is not a structure or union
+        return ((current_uid().val % 100000) >= 10000);
+                 ~~~~~~~~~~~~~^~~~
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/include/linux/susfs_def.h:136:17: error: member reference base type 'int' is not a structure or union
+                        current_uid().val >= 10000);
+                        ~~~~~~~~~~~~~^~~~
+2 errors generated.
+make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:293: drivers/kernelsu/core/init.o] Error 1
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
+  CC      drivers/input/input-poller.o
+make[2]: *** Waiting for unfinished jobs....
+  CC      drivers/leds/led-triggers.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_prevention/touchpanel_prevention.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_common_driver.o
+  CC      drivers/leds/leds-qti-flash.o
+  CC      drivers/leds/leds-qti-tri-led.o
+  CC      drivers/input/touchscreen/usbtouchscreen.o
+  CC      drivers/leds/leds-qpnp-vibrator-ldo.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_proc.o
+  AR      drivers/leds/built-in.a
+  CC      drivers/input/ff-core.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/tp_ioctl.o
+  CC      drivers/input/ff-memless.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/message_list.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_pen/touch_pen_core.o
+  CC      drivers/input/input-leds.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_pen/touch_pen_algo.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_tui_support/touchpanel_tui_support.o
+  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_notify/touchpanel_event_notify.o
+  CC      drivers/input/evdev.o
+  AR      drivers/input/touchscreen/oplus_touchscreen_v2/built-in.a
+  AR      drivers/input/touchscreen/built-in.a
+  AR      drivers/input/built-in.a
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4/Makefile:1956: drivers] Error 2
+make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/obj'
+make: *** [Makefile:190: sub-make] Error 2
+make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4'
+Traceback (most recent call last):
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 240, in <module>
+    build(args.device, args.config, args.os, args.diagnostics_only)
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 208, in build
     run(*options, "-j" + str(os.cpu_count() or 2), "Image", env=env)
   File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/project.py", line 25, in run
     subprocess.run(list(map(str, args)), cwd=cwd, env=env, check=True)
   File "/usr/lib/python3.10/subprocess.py", line 526, in run
     raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['make', '-C', '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4', 'O=/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/obj', 'ARCH=arm64', 'CC=clang', 'LD=ld.lld', 'AR=llvm-ar', 'NM=llvm-nm', 'OBJCOPY=llvm-objcopy', 'OBJDUMP=llvm-objdump', 'STRIP=llvm-strip', 'CLANG_TRIPLE=aarch64-linux-gnu-', 'CROSS_COMPILE=aarch64-linux-gnu-', 'CROSS_COMPILE_ARM32=arm-linux-gnueabi-', 'OPLUS_FEATURE_SECURE_GUARD=no', 'OPLUS_FEATURE_SECURE_ROOTGUARD=no', 'OPLUS_FEATURE_SECURE_MOUNTGUARD=no', 'OPLUS_FEATURE_SECURE_EXECGUARD=no', 'OPLUS_FEATURE_SECURE_KEYINTERFACESGUARD=no', '-j4', 'Image']' returned non-zero exit status 2.
+subprocess.CalledProcessError: Command '['make', '-C', '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/kernel/msm-5.4', 'O=/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200017/obj', 'ARCH=arm64', 'CC=clang', 'LD=ld.lld', 'AR=llvm-ar', 'NM=llvm-nm', 'OBJCOPY=llvm-objcopy', 'OBJDUMP=llvm-objdump', 'STRIP=llvm-strip', 'CLANG_TRIPLE=aarch64-linux-gnu-', 'CROSS_COMPILE=aarch64-linux-gnu-', 'CROSS_COMPILE_ARM32=arm-linux-gnueabi-', 'OPLUS_FEATURE_SECURE_GUARD=no', 'OPLUS_FEATURE_SECURE_ROOTGUARD=no', 'OPLUS_FEATURE_SECURE_MOUNTGUARD=no', 'OPLUS_FEATURE_SECURE_EXECGUARD=no', 'OPLUS_FEATURE_SECURE_KEYINTERFACESGUARD=no', '-j4', 'Image']' returned non-zero exit status 2.
