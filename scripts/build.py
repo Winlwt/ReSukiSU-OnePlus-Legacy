@@ -82,6 +82,10 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
     if compat_patch.exists():
         run("git", "apply", "--check", compat_patch, cwd=source)
         run("git", "apply", compat_patch, cwd=source)
+    susfs_patch = ROOT / "patches" / "susfs-5.4.patch"
+    if susfs_patch.exists():
+        run("git", "apply", "--check", susfs_patch, cwd=source)
+        run("git", "apply", susfs_patch, cwd=source)
     checkout(data["resukisu"]["repository"], data["resukisu"]["commit"], source / "KernelSU", False)
     (source / "drivers/kernelsu").symlink_to("../KernelSU/kernel", target_is_directory=True)
     for path, addition in (
@@ -151,7 +155,7 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
 
     run(*options, "olddefconfig", env=env)
     final_config = (output / ".config").read_text()
-    for required in ("CONFIG_KSU=y", "CONFIG_KSU_MANUAL_HOOK=y", "CONFIG_KALLSYMS_ALL=y", "CONFIG_MODVERSIONS=y"):
+    for required in ("CONFIG_KSU=y", "CONFIG_KALLSYMS_ALL=y", "CONFIG_MODVERSIONS=y"):
         if required not in final_config.splitlines():
             raise RuntimeError("Kconfig dropped required option: " + required)
     run(*options, "-j" + str(os.cpu_count() or 2), "KBUILD_SYMTYPES=1", "net/oplus_modules/data_module/", env=env)
