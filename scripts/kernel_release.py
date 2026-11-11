@@ -1,7 +1,7 @@
 """Project release branding without relaxing module ABI or signature checks."""
 import re
 
-SUFFIX = "-daxiaamu"
+SUFFIX = ""
 
 
 def branded_release(stock):
