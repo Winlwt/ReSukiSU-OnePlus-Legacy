@@ -81,12 +81,15 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
         subprocess.run(["patch", "-p1", "-F3", "--forward", "-i", str(susfs_patch)],
                        cwd=source, check=False, text=True)
     patch = ROOT / "patches" / (PATCHES[name] + ".patch")
-    run("git", "apply", "--check", patch, cwd=source)
-    run("git", "apply", patch, cwd=source)
+    subprocess.run(["patch", "-p1", "-F3", "--forward", "-i", str(patch)], cwd=source, check=False)
     compat_patch = ROOT / "patches" / ("compat-" + data["platform"] + ".patch")
     if compat_patch.exists():
-        run("git", "apply", "--check", compat_patch, cwd=source)
-        run("git", "apply", compat_patch, cwd=source)
+        subprocess.run(["patch", "-p1", "-F3", "--forward", "-i", str(compat_patch)], cwd=source, check=False)
+    for rel, fname in (("fs/exec.c", "fs_exec.c"), ("fs/proc/fd.c", "fs_proc_fd.c")):
+        override = ROOT / "patches" / "files" / fname
+        if override.exists():
+            shutil.copyfile(override, source / rel)
+            print("overrode " + rel, flush=True)
 
     checkout(data["resukisu"]["repository"], data["resukisu"]["commit"], source / "KernelSU", False)
     (source / "drivers/kernelsu").symlink_to("../KernelSU/kernel", target_is_directory=True)
