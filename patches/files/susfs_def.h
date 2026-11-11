@@ -70,3 +70,4 @@
 #define CMD_SUSFS_ENABLE_AVC_LOG_SPOOFING             0x60010
 #define CMD_SUSFS_ADD_SUS_MAP                         0x60020
 #define CMD_SUSFS_SET_PRIORITY_UID_FILTER             0x60030
+#define SUSFS_MAGIC 0xFAFAFAFA
