@@ -34,19 +34,14 @@ jobs:
         if: steps.build.outcome == 'failure'
         run: |
           {
-            echo "===== error lines ====="
-            grep -nE "error:|Error [0-9]|fatal:|undefined reference" build.log | head -40 > /tmp/errs.txt || true
-            cat /tmp/errs.txt
+            echo "===== first errors ====="
+            grep -nE "error:|Error [0-9]|FAILED|fatal:|No such file|undefined reference|rej$" build.log | head -80 || true
             echo
-            echo "===== error context ====="
-            while IFS=: read -r n rest; do
-              case "$n" in (''|*[!0-9]*) continue ;; esac
-              echo "----- around line $n -----"
-              sed -n "$(( n > 15 ? n - 15 : 1 )),$(( n + 6 ))p" build.log
-            done < /tmp/errs.txt
+            echo "===== hook check / KSU messages ====="
+            grep -inE "hook|susfs|kernelsu|not found|missing" build.log | tail -40 || true
             echo
-            echo "===== last 120 lines ====="
-            tail -120 build.log || true
+            echo "===== last 150 lines ====="
+            tail -150 build.log || true
           } > diag.txt
           wc -l diag.txt
 
