@@ -85,7 +85,8 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
     compat_patch = ROOT / "patches" / ("compat-" + data["platform"] + ".patch")
     if compat_patch.exists():
         subprocess.run(["patch", "-p1", "-F3", "--forward", "-i", str(compat_patch)], cwd=source, check=False)
-    for rel, fname in (("include/linux/susfs.h", "susfs.h"), ("include/linux/susfs_def.h", "susfs_def.h")):
+    for rel, fname in (("include/linux/susfs.h", "susfs.h"), ("include/linux/susfs_def.h", "susfs_def.h"),
+                       ("fs/susfs.c", "susfs.c")):
         hdr = ROOT / "patches" / "files" / fname
         if hdr.exists():
             shutil.copyfile(hdr, source / rel)
