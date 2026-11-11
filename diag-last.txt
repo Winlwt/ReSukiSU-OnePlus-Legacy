@@ -1,129 +1,312 @@
-===== first errors =====
-90:Hunk #3 FAILED at 60.
-91:1 out of 3 hunks FAILED -- saving rejects to file fs/proc/fd.c.rej
-3924:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: fs] Error 2
-4681:make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
-4715:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: drivers] Error 2
-4717:make: *** [Makefile:190: sub-make] Error 2
+===== error lines =====
+5494:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/drivers/kernelsu/supercall/supercall.c:155:19: error: use of undeclared identifier 'SUSFS_MAGIC'
+5498:make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/scripts/Makefile.build:293: drivers/kernelsu/supercall/supercall.o] Error 1
+5499:make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
+5634:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/Makefile:1956: drivers] Error 2
+5754:make: *** [Makefile:190: sub-make] Error 2
 
-===== last 120 lines =====
-  CC      drivers/gpu/drm/drm_lease.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_oncell/synaptics_tcm_device.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_S3910/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_qcom.o
-  CC      drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_test_reporting.o
-  CC      drivers/gpu/drm/drm_writeback.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_oncell/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/synaptics_touch_panel_remote.o
-  AR      drivers/input/touchscreen/synaptics_dsx/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek_common.o
-  CC      drivers/gpu/drm/drm_client.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/synaptics_common.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_ic.o
-  CC      drivers/input/input-compat.o
-  CC      drivers/gpu/drm/drm_client_modeset.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/built-in.a
-  CC      drivers/iommu/iommu.o
-  CC      drivers/gpu/drm/drm_atomic_uapi.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_mp.o
-  CC      drivers/input/touchscreen/of_touchscreen.o
-  CC      drivers/gpu/drm/drm_hdcp.o
-  CC      drivers/iommu/iommu-traces.o
-  CC      drivers/irqchip/irqchip.o
-  CC      drivers/irqchip/irq-sun4i.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_fw.o
-  CC      drivers/gpu/drm/drm_ioc32.o
-  CC      drivers/irqchip/irq-sunxi-nmi.o
-  CC      drivers/iommu/iommu-sysfs.o
-  CC      drivers/irqchip/irq-gic.o
-  CC      drivers/gpu/drm/drm_gem_cma_helper.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_node.o
-  CC      drivers/iommu/dma-iommu.o
-  CC      drivers/irqchip/irq-gic-common.o
-  CC      drivers/irqchip/irq-gic-v2m.o
-  CC      drivers/gpu/drm/drm_gem_shmem_helper.o
-  CC      drivers/irqchip/irq-gic-v3.o
-  CC      drivers/iommu/msm_dma_iommu_mapping.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/built-in.a
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/util_interface/touch_interfaces.o
-  CC      drivers/gpu/drm/drm_panel.o
-  CC      drivers/iommu/io-pgtable.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_comon_api/touch_comon_api.o
-  CC      drivers/irqchip/irq-gic-v3-mbi.o
-  CC      drivers/gpu/drm/drm_of.o
-  CC      drivers/iommu/io-pgtable-arm-v7s.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_healthinfo/touchpanel_healthinfo.o
-  CC      drivers/irqchip/irq-gic-v3-its.o
-  CC      drivers/iommu/io-pgtable-arm.o
-  CC      drivers/gpu/drm/drm_mipi_dsi.o
-  CC      drivers/iommu/iova.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_healthinfo/touchpanel_exception.o
-  CC      drivers/irqchip/irq-gic-v3-its-platform-msi.o
-  CC      drivers/gpu/drm/drm_panel_orientation_quirks.o
-  CC      drivers/irqchip/irq-gic-v4.o
-  AR      drivers/gpu/drm/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_autotest/touchpanel_autotest.o
-  CC      drivers/irqchip/irq-gic-v3-its-pci-msi.o
-  AR      drivers/gpu/built-in.a
-  CC      drivers/iommu/io-pgtable-fast.o
-  CC      drivers/irqchip/irq-partition-percpu.o
--- BakaSU version code: 35259
--- BakaSU version name: v4.1.0-548d1dda
--- Supported Managers: KernelSU Official, KOWSU, BakaSU 
--- KERNEL_VERSION: 5.4
--- KERNEL_TYPE: GKI 1.0
--- BakaSU: using SuSFS Inline hook
--- You are using SUSFS, if you face any issues, please MAKE SURE you are using LATEST SUSFS KERNEL SIDE before submit issue to BakaSU.
--- We keep tracking simonpunk's latest changes, and don't maintain ANY backward compatibility for old version of susfs.
--- You lost ksu_handle_setresuid hook in your kernel
--- Please submit issue to your SUSFS patches author.
-/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/KernelSU/kernel/tools/inline_hook_check.mk:40: *** You should integrate BakaSU in your kernel. .  Stop.
-make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
+===== error context =====
+----- around line 5494 -----
+  AR      drivers/media/platform/cros-ec-cec/built-in.a
+  AR      drivers/media/platform/davinci/built-in.a
+  AR      drivers/media/platform/meson/built-in.a
+  CC      drivers/media/platform/msm/cvp/cvp.o
+  CC      net/netfilter/nf_nat_helper.o
+  CC      drivers/md/dm-bow.o
+  CC      drivers/media/platform/msm/cvp/msm_cvp_ioctl.o
+  CC      drivers/kernelsu/supercall/supercall.o
+  AR      drivers/md/built-in.a
+  AR      drivers/media/platform/omap/built-in.a
+  AR      drivers/media/radio/built-in.a
+  CC      net/oplus_nwpower/oplus_nwpower.o
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/drivers/kernelsu/supercall/supercall.c:155:19: error: use of undeclared identifier 'SUSFS_MAGIC'
+    if (magic2 == SUSFS_MAGIC) {
+                  ^
+1 error generated.
+make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/scripts/Makefile.build:293: drivers/kernelsu/supercall/supercall.o] Error 1
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
 make[2]: *** Waiting for unfinished jobs....
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_prevention/touchpanel_prevention.o
-  CC      drivers/iommu/dma-mapping-fast.o
-  CC      drivers/input/input-mt.o
-  CC      drivers/irqchip/irq-mbigen.o
-  CC      drivers/irqchip/msm_show_resume_irq.o
-  CC      drivers/input/touchscreen/atmel_mxt_ts.o
-  CC      drivers/iommu/of_iommu.o
-  CC      drivers/irqchip/qcom-pdc.o
-  AR      drivers/irqchip/built-in.a
-  CC      drivers/iommu/arm-smmu.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_common_driver.o
-  CC      drivers/input/touchscreen/usbtouchscreen.o
-  CC      drivers/input/input-poller.o
-  CC      drivers/input/ff-core.o
-  CC      drivers/iommu/arm-smmu-impl.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_proc.o
-  CC      drivers/iommu/arm-smmu-qcom.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/tp_ioctl.o
-  CC      drivers/iommu/arm-smmu-debug.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/message_list.o
-  CC      drivers/input/ff-memless.o
-  CC      drivers/iommu/iommu-logger.o
-  CC      drivers/input/input-leds.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_pen/touch_pen_core.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_pen/touch_pen_algo.o
-  CC      drivers/input/evdev.o
-  AR      drivers/iommu/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_tui_support/touchpanel_tui_support.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_notify/touchpanel_event_notify.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/built-in.a
-  AR      drivers/input/touchscreen/built-in.a
-  AR      drivers/input/built-in.a
-make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: drivers] Error 2
-make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/obj'
+----- around line 5498 -----
+  CC      net/netfilter/nf_nat_helper.o
+  CC      drivers/md/dm-bow.o
+  CC      drivers/media/platform/msm/cvp/msm_cvp_ioctl.o
+  CC      drivers/kernelsu/supercall/supercall.o
+  AR      drivers/md/built-in.a
+  AR      drivers/media/platform/omap/built-in.a
+  AR      drivers/media/radio/built-in.a
+  CC      net/oplus_nwpower/oplus_nwpower.o
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/drivers/kernelsu/supercall/supercall.c:155:19: error: use of undeclared identifier 'SUSFS_MAGIC'
+    if (magic2 == SUSFS_MAGIC) {
+                  ^
+1 error generated.
+make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/scripts/Makefile.build:293: drivers/kernelsu/supercall/supercall.o] Error 1
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
+make[2]: *** Waiting for unfinished jobs....
+  CC      drivers/media/platform/msm/cvp/msm_cvp_platform.o
+  AR      drivers/media/platform/stm32/built-in.a
+  CC      drivers/media/platform/msm/synx/synx.o
+  CC      net/netfilter/nf_nat_redirect.o
+----- around line 5499 -----
+  CC      drivers/md/dm-bow.o
+  CC      drivers/media/platform/msm/cvp/msm_cvp_ioctl.o
+  CC      drivers/kernelsu/supercall/supercall.o
+  AR      drivers/md/built-in.a
+  AR      drivers/media/platform/omap/built-in.a
+  AR      drivers/media/radio/built-in.a
+  CC      net/oplus_nwpower/oplus_nwpower.o
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/drivers/kernelsu/supercall/supercall.c:155:19: error: use of undeclared identifier 'SUSFS_MAGIC'
+    if (magic2 == SUSFS_MAGIC) {
+                  ^
+1 error generated.
+make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/scripts/Makefile.build:293: drivers/kernelsu/supercall/supercall.o] Error 1
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
+make[2]: *** Waiting for unfinished jobs....
+  CC      drivers/media/platform/msm/cvp/msm_cvp_platform.o
+  AR      drivers/media/platform/stm32/built-in.a
+  CC      drivers/media/platform/msm/synx/synx.o
+  CC      net/netfilter/nf_nat_redirect.o
+  CC      drivers/media/platform/msm/cvp/msm_cvp_common.o
+----- around line 5634 -----
+  CC      net/sched/act_mirred.o
+  CC      net/netfilter/xt_TEE.o
+  CC      drivers/media/v4l2-core/v4l2-i2c.o
+  CC      net/tipc/bcast.o
+  CC      net/sched/act_skbedit.o
+  CC      net/netfilter/xt_TRACE.o
+  CC      drivers/media/v4l2-core/v4l2-dv-timings.o
+  CC      net/tipc/bearer.o
+  CC      net/netfilter/xt_IDLETIMER.o
+  CC      net/sched/sch_fifo.o
+  AR      drivers/media/v4l2-core/built-in.a
+  AR      drivers/media/built-in.a
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/Makefile:1956: drivers] Error 2
+make[1]: *** Waiting for unfinished jobs....
+  CC      net/unix/af_unix.o
+  CC      net/tipc/core.o
+  CC      net/netfilter/xt_bpf.o
+  CC      net/sched/sch_htb.o
+  CC      net/tipc/link.o
+----- around line 5754 -----
+  GEN     net/wireless/shipped-certs.c
+  CC      net/wireless/wext-core.o
+  CC      net/xfrm/xfrm_ipcomp.o
+  CC      net/xfrm/xfrm_interface.o
+  CC      net/wireless/wext-proc.o
+  CC      net/wireless/wext-spy.o
+  CC      net/wireless/wext-priv.o
+  CC      net/wireless/shipped-certs.o
+  AR      net/xfrm/built-in.a
+  AR      net/wireless/built-in.a
+  AR      net/built-in.a
+make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/obj'
 make: *** [Makefile:190: sub-make] Error 2
-make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4'
+make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4'
 Traceback (most recent call last):
-  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 221, in <module>
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 240, in <module>
     build(args.device, args.config, args.os, args.diagnostics_only)
-  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 189, in build
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 208, in build
+    run(*options, "-j" + str(os.cpu_count() or 2), "Image", env=env)
+
+===== hook / susfs / ksu messages =====
+5294:-- BakaSU/manual_hook: ksu_handle_newfstat_ret found
+5295:-- BakaSU/manual_hook: ksu_handle_fstat64_ret found
+5296:-- BakaSU/manual_hook: ksu_handle_sys_reboot found
+5319:-- BakaSU/compat: found hlist in security_hook_list
+5322:-- BakaSU/compat: found security_add_hooks
+5323:-- BakaSU/compat: ksu_handle_post_execve hook not found
+5329:  HOSTCC  drivers/kernelsu/tools/code_generation/syscall_no/syscall_no
+5333:  CC      drivers/kernelsu/preinit/preinit.o
+5337:  CC      drivers/kernelsu/preinit/runner.elf
+5341:  GEN     drivers/kernelsu/compat/syscall_no.h
+5342:  AS      drivers/kernelsu/preinit/blob.o
+5343:  CC      drivers/kernelsu/core/init.o
+5346:  CC      drivers/kernelsu/policy/allowlist.o
+5353:  CC      drivers/kernelsu/policy/app_profile.o
+5359:  CC      drivers/kernelsu/policy/feature.o
+5364:  CC      drivers/kernelsu/feature/sucompat.o
+5368:  CC      drivers/kernelsu/feature/kernel_umount.o
+5372:  CC      drivers/kernelsu/feature/sulog.o
+5374:  CC      net/oplus_modules/oplus_dns_hook/oplus_dns_hook.o
+5375:  CC      drivers/kernelsu/feature/adb_root.o
+5378:  AR      net/oplus_modules/oplus_dns_hook/built-in.a
+5380:  CC      drivers/kernelsu/feature/selinux_hide.o
+5385:  CC      drivers/kernelsu/feature/shell_su_adb_only.o
+5386:  CC      drivers/kernelsu/feature/module_blacklist.o
+5387:  CC      drivers/kernelsu/hook/setuid_hook.o
+5391:  CC      drivers/kernelsu/feature/dynamic_manager.o
+5395:  CC      drivers/kernelsu/manager/apk_sign.o
+5398:  CC      drivers/kernelsu/manager/throne_tracker.o
+5401:  CC      drivers/kernelsu/manager/manager.o
+5404:  CC      drivers/kernelsu/compat/kernel_compat.o
+5409:  CC      drivers/kernelsu/infra/su_mount_ns.o
+5412:  CC      drivers/kernelsu/infra/seccomp_cache.o
+5413:  CC      drivers/kernelsu/infra/file_wrapper.o
+5422:  CC      drivers/kernelsu/infra/event_queue.o
+5425:  CC      drivers/kernelsu/runtime/boot_event.o
+5429:  CC      drivers/kernelsu/runtime/ksud_integration.o
+5433:  CC      drivers/kernelsu/infra/btf_parser.o
+5434:  CC      drivers/kernelsu/selinux/inode.o
+5437:  CC      drivers/kernelsu/selinux/selinux.o
+5442:  CC      drivers/kernelsu/selinux/sepolicy.o
+5448:  CC      drivers/kernelsu/selinux/rules.o
+5452:  CC      drivers/kernelsu/sulog/event.o
+5455:  CC      drivers/kernelsu/sulog/fd.o
+5460:  CC      drivers/kernelsu/supercall/dispatch.o
+5480:  CC      drivers/kernelsu/supercall/perm.o
+5489:  CC      drivers/kernelsu/supercall/supercall.o
+5494:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/drivers/kernelsu/supercall/supercall.c:155:19: error: use of undeclared identifier 'SUSFS_MAGIC'
+5495:    if (magic2 == SUSFS_MAGIC) {
+5498:make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/scripts/Makefile.build:293: drivers/kernelsu/supercall/supercall.o] Error 1
+5499:make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
+
+===== last 150 lines =====
+  CC      net/netfilter/xt_TPROXY.o
+  CC      drivers/media/v4l2-core/v4l2-mc.o
+  CC      net/netfilter/xt_TCPMSS.o
+  CC      drivers/media/v4l2-core/v4l2-spi.o
+  CC      net/sched/act_gact.o
+  CC      net/tipc/addr.o
+  CC      net/sched/act_mirred.o
+  CC      net/netfilter/xt_TEE.o
+  CC      drivers/media/v4l2-core/v4l2-i2c.o
+  CC      net/tipc/bcast.o
+  CC      net/sched/act_skbedit.o
+  CC      net/netfilter/xt_TRACE.o
+  CC      drivers/media/v4l2-core/v4l2-dv-timings.o
+  CC      net/tipc/bearer.o
+  CC      net/netfilter/xt_IDLETIMER.o
+  CC      net/sched/sch_fifo.o
+  AR      drivers/media/v4l2-core/built-in.a
+  AR      drivers/media/built-in.a
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4/Makefile:1956: drivers] Error 2
+make[1]: *** Waiting for unfinished jobs....
+  CC      net/unix/af_unix.o
+  CC      net/tipc/core.o
+  CC      net/netfilter/xt_bpf.o
+  CC      net/sched/sch_htb.o
+  CC      net/tipc/link.o
+  CC      net/netfilter/xt_comment.o
+  CC      net/netfilter/xt_connlimit.o
+  CC      net/sched/sch_ingress.o
+  CC      net/unix/garbage.o
+  CC      net/netfilter/xt_conntrack.o
+  CC      net/tipc/discover.o
+  CC      net/sched/sch_prio.o
+  CC      net/unix/sysctl_net_unix.o
+  CC      net/tipc/msg.o
+  CC      net/sched/sch_multiq.o
+  CC      net/netfilter/xt_dscp.o
+  CC      net/unix/scm.o
+  CC      net/sched/sch_netem.o
+  CC      net/netfilter/xt_ecn.o
+  CC      net/tipc/name_distr.o
+  CC      net/tipc/subscr.o
+  CC      net/netfilter/xt_esp.o
+  AR      net/unix/built-in.a
+  CC      net/tipc/monitor.o
+  CC      net/sched/cls_u32.o
+  CC      net/tipc/name_table.o
+  CC      net/netfilter/xt_hashlimit.o
+  CC      net/sched/cls_fw.o
+  CC      net/wireless/core.o
+  CC      net/tipc/net.o
+  CC      net/sched/cls_flow.o
+  CC      net/netfilter/xt_helper.o
+  CC      net/tipc/netlink.o
+  CC      net/netfilter/xt_hl.o
+  CC      net/sched/cls_bpf.o
+  CC      net/tipc/netlink_compat.o
+  CC      net/wireless/sysfs.o
+  CC      net/netfilter/xt_iprange.o
+  CC      net/sched/ematch.o
+  CC      net/tipc/node.o
+  CC      net/netfilter/xt_l2tp.o
+  CC      net/wireless/radiotap.o
+  CC      net/sched/em_cmp.o
+  CC      net/netfilter/xt_length.o
+  CC      net/wireless/util.o
+  CC      net/sched/em_nbyte.o
+  CC      net/tipc/socket.o
+  CC      net/netfilter/xt_limit.o
+  CC      net/sched/em_u32.o
+  CC      net/netfilter/xt_mac.o
+  CC      net/sched/em_meta.o
+  CC      net/netfilter/xt_multiport.o
+  CC      net/sched/em_text.o
+  CC      net/netfilter/xt_owner.o
+  AR      net/sched/built-in.a
+  CC      net/tipc/eth_media.o
+  CC      net/wireless/reg.o
+  CC      net/tipc/topsrv.o
+  CC      net/wireless/scan.o
+  CC      net/netfilter/xt_pkttype.o
+  CC      net/tipc/group.o
+  CC      net/netfilter/xt_policy.o
+  CC      net/tipc/trace.o
+  CC      net/netfilter/xt_quota.o
+  CC      net/tipc/udp_media.o
+  CC      net/netfilter/xt_quota2.o
+  CC      net/netfilter/xt_socket.o
+  CC      net/wireless/nl80211.o
+  CC      net/tipc/sysctl.o
+  CC      net/xdp/xsk.o
+  CC      net/netfilter/xt_state.o
+  CC      net/tipc/diag.o
+  CC      net/netfilter/xt_statistic.o
+  AR      net/tipc/built-in.a
+  CC      net/netfilter/xt_string.o
+  CC      net/wireless/mlme.o
+  CC      net/xdp/xdp_umem.o
+  CC      net/netfilter/xt_time.o
+  CC      net/netfilter/xt_u32.o
+  AR      net/netfilter/built-in.a
+  CC      net/xdp/xsk_queue.o
+  CC      net/wireless/ibss.o
+  CC      net/xfrm/xfrm_policy.o
+  AR      net/xdp/built-in.a
+  CC      net/wireless/sme.o
+  CC      net/xfrm/xfrm_state.o
+  CC      net/wireless/chan.o
+  CC      net/socket.o
+  CC      net/wireless/ethtool.o
+  CC      net/compat.o
+  CC      net/xfrm/xfrm_hash.o
+  CC      net/xfrm/xfrm_input.o
+  CC      net/wireless/mesh.o
+  CC      net/xfrm/xfrm_output.o
+  CC      net/xfrm/xfrm_sysctl.o
+  CC      net/wireless/ap.o
+  CC      net/sysctl_net.o
+  CC      net/wireless/trace.o
+  CC      net/xfrm/xfrm_replay.o
+  CC      net/wireless/ocb.o
+  CC      net/xfrm/xfrm_device.o
+  CC      net/xfrm/xfrm_proc.o
+  CC      net/wireless/pmsr.o
+  CC      net/xfrm/xfrm_algo.o
+  CC      net/wireless/of.o
+  CC      net/xfrm/xfrm_user.o
+  GEN     net/wireless/shipped-certs.c
+  CC      net/wireless/wext-core.o
+  CC      net/xfrm/xfrm_ipcomp.o
+  CC      net/xfrm/xfrm_interface.o
+  CC      net/wireless/wext-proc.o
+  CC      net/wireless/wext-spy.o
+  CC      net/wireless/wext-priv.o
+  CC      net/wireless/shipped-certs.o
+  AR      net/xfrm/built-in.a
+  AR      net/wireless/built-in.a
+  AR      net/built-in.a
+make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/obj'
+make: *** [Makefile:190: sub-make] Error 2
+make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4'
+Traceback (most recent call last):
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 240, in <module>
+    build(args.device, args.config, args.os, args.diagnostics_only)
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 208, in build
     run(*options, "-j" + str(os.cpu_count() or 2), "Image", env=env)
   File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/project.py", line 25, in run
     subprocess.run(list(map(str, args)), cwd=cwd, env=env, check=True)
   File "/usr/lib/python3.10/subprocess.py", line 526, in run
     raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['make', '-C', '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4', 'O=/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/obj', 'ARCH=arm64', 'CC=clang', 'LD=ld.lld', 'AR=llvm-ar', 'NM=llvm-nm', 'OBJCOPY=llvm-objcopy', 'OBJDUMP=llvm-objdump', 'STRIP=llvm-strip', 'CLANG_TRIPLE=aarch64-linux-gnu-', 'CROSS_COMPILE=aarch64-linux-gnu-', 'CROSS_COMPILE_ARM32=arm-linux-gnueabi-', 'OPLUS_FEATURE_SECURE_GUARD=no', 'OPLUS_FEATURE_SECURE_ROOTGUARD=no', 'OPLUS_FEATURE_SECURE_MOUNTGUARD=no', 'OPLUS_FEATURE_SECURE_EXECGUARD=no', 'OPLUS_FEATURE_SECURE_KEYINTERFACESGUARD=no', '-j4', 'Image']' returned non-zero exit status 2.
+subprocess.CalledProcessError: Command '['make', '-C', '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/kernel/msm-5.4', 'O=/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111200724/obj', 'ARCH=arm64', 'CC=clang', 'LD=ld.lld', 'AR=llvm-ar', 'NM=llvm-nm', 'OBJCOPY=llvm-objcopy', 'OBJDUMP=llvm-objdump', 'STRIP=llvm-strip', 'CLANG_TRIPLE=aarch64-linux-gnu-', 'CROSS_COMPILE=aarch64-linux-gnu-', 'CROSS_COMPILE_ARM32=arm-linux-gnueabi-', 'OPLUS_FEATURE_SECURE_GUARD=no', 'OPLUS_FEATURE_SECURE_ROOTGUARD=no', 'OPLUS_FEATURE_SECURE_MOUNTGUARD=no', 'OPLUS_FEATURE_SECURE_EXECGUARD=no', 'OPLUS_FEATURE_SECURE_KEYINTERFACESGUARD=no', '-j4', 'Image']' returned non-zero exit status 2.
