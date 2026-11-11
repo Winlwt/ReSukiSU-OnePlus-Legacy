@@ -24,7 +24,34 @@ jobs:
           echo "/usr/lib/llvm-14/bin" >> "$GITHUB_PATH"
 
       - name: Compile kernel
-        run: python3 scripts/build.py --device oneplus-9-pro --os ${{ inputs.os }}
+        id: build
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          python3 scripts/build.py --device oneplus-9-pro --os ${{ inputs.os }} 2>&1 | tee build.log
+
+      - name: Collect diagnostics
+        if: steps.build.outcome == 'failure'
+        run: |
+          {
+            echo "===== first errors ====="
+            grep -nE "error:|Error [0-9]|FAILED|fatal:|No such file|undefined reference|rej$" build.log | head -80 || true
+            echo
+            echo "===== last 120 lines ====="
+            tail -120 build.log || true
+          } > diag.txt
+          wc -l diag.txt
+
+      - name: Upload diagnostics
+        if: steps.build.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: diag-${{ inputs.os }}
+          path: diag.txt
+
+      - name: Fail if compile failed
+        if: steps.build.outcome == 'failure'
+        run: exit 1
 
       - name: Repack boot.img (replace kernel only)
         env:
