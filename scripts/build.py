@@ -84,8 +84,7 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
         run("git", "apply", compat_patch, cwd=source)
     susfs_patch = ROOT / "patches" / "susfs-5.4.patch"
     if susfs_patch.exists():
-        run("git", "apply", "--check", susfs_patch, cwd=source)
-        run("git", "apply", susfs_patch, cwd=source)
+        run("git", "apply", "-3", "--exclude=fs/proc/bootconfig.c", susfs_patch, cwd=source)
     checkout(data["resukisu"]["repository"], data["resukisu"]["commit"], source / "KernelSU", False)
     (source / "drivers/kernelsu").symlink_to("../KernelSU/kernel", target_is_directory=True)
     for path, addition in (
