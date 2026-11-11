@@ -85,6 +85,11 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
     compat_patch = ROOT / "patches" / ("compat-" + data["platform"] + ".patch")
     if compat_patch.exists():
         subprocess.run(["patch", "-p1", "-F3", "--forward", "-i", str(compat_patch)], cwd=source, check=False)
+    for rel, fname in (("include/linux/susfs.h", "susfs.h"), ("include/linux/susfs_def.h", "susfs_def.h")):
+        hdr = ROOT / "patches" / "files" / fname
+        if hdr.exists():
+            shutil.copyfile(hdr, source / rel)
+            print("installed header " + rel, flush=True)
     for rel, fname in (("fs/exec.c", "fs_exec.c"), ("fs/proc/fd.c", "fs_proc_fd.c")):
         override = ROOT / "patches" / "files" / fname
         if override.exists():
