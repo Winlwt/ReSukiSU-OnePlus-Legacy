@@ -1,0 +1,97 @@
+name: Build FORCE_LOAD kernel and repack boot
+
+on:
+  workflow_dispatch:
+    inputs:
+      os:
+        type: choice
+        options: [coloros, oxygenos]
+        default: coloros
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang-14 llvm-14 lld-14 gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi \
+            build-essential bc bison flex libssl-dev libelf-dev libtinfo5 protobuf-c-compiler \
+            libprotobuf-c-dev dwarves python3
+          echo "/usr/lib/llvm-14/bin" >> "$GITHUB_PATH"
+
+      - name: Compile kernel
+        run: python3 scripts/build.py --device oneplus-9-pro --os ${{ inputs.os }}
+
+      - name: Repack boot.img (replace kernel only)
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, shutil, subprocess, urllib.request, zipfile
+
+          BASE_URL = ("https://github.com/daxiaamu/ReSukiSU-OnePlus-Legacy/releases/download/"
+                      "v0.3.0/oneplus-9-pro-coloros-LE2120_14.0.0.1901-CN01-v0.3.0.zip")
+          ROM = os.environ.get("ROM", "coloros")
+
+          work = pathlib.Path(".work"); work.mkdir(exist_ok=True)
+
+          zp = work / "base.zip"
+          if not zp.is_file():
+              urllib.request.urlretrieve(BASE_URL, zp)
+          with zipfile.ZipFile(zp) as z:
+              z.extract("boot.img", work)
+          boot = work / "boot.img"
+          print("base boot:", boot.stat().st_size, hashlib.sha256(boot.read_bytes()).hexdigest())
+
+          built = pathlib.Path("out/oneplus-9-pro") / ROM
+          image = built / "Image"
+          if not image.is_file():
+              raise SystemExit("compiled Image missing: " + str(image))
+          print("kernel:", image.stat().st_size, hashlib.sha256(image.read_bytes()).hexdigest())
+
+          tools = json.loads(pathlib.Path("tools.lock.json").read_text())["magiskboot"]
+          apk = work / "magisk.apk"
+          if not apk.is_file():
+              urllib.request.urlretrieve(tools["url"], apk)
+          with zipfile.ZipFile(apk) as z:
+              (work / "magiskboot").write_bytes(z.read(tools["member"]))
+          os.chmod(work / "magiskboot", 0o755)
+
+          unpack = work / "unpack"; unpack.mkdir(exist_ok=True)
+          subprocess.run([str(work / "magiskboot"), "unpack", "-h", str(boot)], cwd=unpack, check=True)
+          keep = {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+                  for p in unpack.iterdir() if p.is_file() and p.name not in ("kernel", "header")}
+          print("preserved:", sorted(keep))
+
+          shutil.copyfile(image, unpack / "kernel")
+          new_boot = work / "new_boot.img"
+          subprocess.run([str(work / "magiskboot"), "repack", str(boot), str(new_boot)], cwd=unpack, check=True)
+
+          verify = work / "verify"; verify.mkdir(exist_ok=True)
+          subprocess.run([str(work / "magiskboot"), "unpack", "-h", str(new_boot)], cwd=verify, check=True)
+          after = {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+                   for p in verify.iterdir() if p.is_file() and p.name not in ("kernel", "header")}
+          if keep != after:
+              raise SystemExit("ramdisk/dtb changed: %s vs %s" % (sorted(keep), sorted(after)))
+          if (unpack / "header").read_bytes() != (verify / "header").read_bytes():
+              raise SystemExit("boot header changed")
+          if hashlib.sha256((verify / "kernel").read_bytes()).hexdigest() != hashlib.sha256(image.read_bytes()).hexdigest():
+              raise SystemExit("kernel in boot.img mismatch")
+
+          final = pathlib.Path("boot.img")
+          shutil.copyfile(new_boot, final)
+          if final.stat().st_size > boot.stat().st_size:
+              raise SystemExit("new boot larger than base")
+          print("RESULT boot.img", final.stat().st_size, hashlib.sha256(final.read_bytes()).hexdigest())
+          PY
+
+      - name: Upload boot.img
+        uses: actions/upload-artifact@v4
+        with:
+          name: boot-force-load-${{ inputs.os }}
+          path: |
+            boot.img
+            out/oneplus-9-pro/${{ inputs.os }}/build.json
+          if-no-files-found: error
