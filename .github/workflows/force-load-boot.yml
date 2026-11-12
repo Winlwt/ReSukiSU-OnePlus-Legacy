@@ -7,6 +7,9 @@ on:
         type: choice
         options: [coloros, oxygenos]
         default: coloros
+      susfs:
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -29,6 +32,8 @@ jobs:
       - name: Compile kernel
         id: build
         continue-on-error: true
+        env:
+          SUSFS: ${{ inputs.susfs && '1' || '0' }}
         run: |
           set -o pipefail
           python3 scripts/build.py --device oneplus-9-pro --os ${{ inputs.os }} 2>&1 | tee build.log
@@ -139,7 +144,7 @@ jobs:
       - name: Upload boot.img
         uses: actions/upload-artifact@v4
         with:
-          name: boot-force-load-${{ inputs.os }}
+          name: boot-force-load-${{ inputs.os }}${{ inputs.susfs && '-susfs' || '' }}
           path: |
             boot.img
             out/oneplus-9-pro/${{ inputs.os }}/build.json
