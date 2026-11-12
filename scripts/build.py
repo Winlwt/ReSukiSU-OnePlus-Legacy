@@ -198,6 +198,14 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
         fragment = "\n".join(
             "# CONFIG_KSU_SUSFS is not set" if line.strip() == "CONFIG_KSU_SUSFS=y" else line
             for line in fragment.splitlines())
+    else:
+        disable = [x.strip() for x in os.environ.get("SUSFS_DISABLE", "").split(",") if x.strip()]
+        if disable:
+            drop = set("CONFIG_" + d + "=y" for d in disable)
+            fragment = "\n".join(l for l in fragment.splitlines() if l.strip() not in drop)
+            fragment += "\n" + "\n".join("# CONFIG_" + d + " is not set" for d in disable)
+            fragment += "\nCONFIG_BOOTPARAM_HUNG_TASK_PANIC=y"
+            print("SUSFS disabled features: " + ", ".join(disable), flush=True)
     with (output / ".config").open("a", encoding="utf-8") as stream:
         stream.write("\n" + fragment)
         if module_trust:
