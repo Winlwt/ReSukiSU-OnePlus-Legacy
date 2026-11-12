@@ -100,6 +100,31 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
     checkout(data["resukisu"]["repository"], data["resukisu"]["commit"], source / "KernelSU", False)
     (source / "drivers/kernelsu").symlink_to("../KernelSU/kernel", target_is_directory=True)
 
+    kcfg = source / "KernelSU" / "kernel" / "Kconfig"
+    if kcfg.exists():
+        kl = kcfg.read_text(encoding="utf-8").splitlines()
+        if any(l.strip() == "config KSU_SUSFS" for l in kl) and "SUSFS_STANDALONE" not in "\n".join(kl):
+            i = next(k for k, l in enumerate(kl) if l.strip() == "config KSU_SUSFS")
+            kl[i:i] = ["# SUSFS_STANDALONE", "endchoice", ""]
+            j = next((k for k in range(i + 4, len(kl)) if kl[k].strip() == "endchoice"), None)
+            if j is not None:
+                del kl[j]
+            for k in range(i, min(i + 8, len(kl))):
+                if kl[k].strip().startswith("depends on THREAD_INFO_IN_TASK"):
+                    kl[k] = "\tdepends on KSU && THREAD_INFO_IN_TASK && 64BIT"
+                    break
+            kcfg.write_text("\n".join(kl) + "\n", encoding="utf-8")
+            print("SUSFS moved out of hook choice", flush=True)
+    compat = ROOT / "patches" / "files" / "susfs_compat.c"
+    if compat.exists():
+        shutil.copyfile(compat, source / "fs" / "susfs_compat.c")
+        mk = source / "fs" / "Makefile"
+        text = mk.read_text()
+        if "susfs_compat.o" not in text:
+            mk.write_text(text.rstrip() + "\nobj-$(CONFIG_KSU_SUSFS) += susfs_compat.o\n")
+        print("installed fs/susfs_compat.c", flush=True)
+
+
 
     for path, addition in (
         ("drivers/Makefile", "\nobj-$(CONFIG_KSU) += kernelsu/\n"),
