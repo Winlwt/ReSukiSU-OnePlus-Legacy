@@ -160,6 +160,21 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
             print("ksu core/init.c: susfs_init() forced for the manual hook branch", flush=True)
 
     fs_makefile = source / "fs" / "Makefile"
+    if want_susfs:
+        # The susfs hunks reference VMA_PAD_START/VMA_PAD_END in task_mmu.c, but
+        # the patch guards its own #include with a different CONFIG combination.
+        # Make the header reachable for every feature subset.
+        tm = source / "fs" / "proc" / "task_mmu.c"
+        if tm.exists():
+            text = tm.read_text(encoding="utf-8")
+            if "susfs_def.h" not in text:
+                lines = text.splitlines(keepends=True)
+                for i, line in enumerate(lines):
+                    if line.startswith("#include"):
+                        lines.insert(i + 1, "#include <linux/susfs_def.h>\n")
+                        break
+                tm.write_text("".join(lines), encoding="utf-8")
+                print("fs/proc/task_mmu.c: susfs_def.h include forced", flush=True)
     if want_susfs and fs_makefile.exists() and "susfs.o" not in fs_makefile.read_text(encoding="utf-8"):
         with fs_makefile.open("a", encoding="utf-8") as stream:
             stream.write("\nobj-$(CONFIG_KSU_SUSFS)\t+= susfs.o\n")
