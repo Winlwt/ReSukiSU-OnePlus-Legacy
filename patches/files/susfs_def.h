@@ -217,3 +217,11 @@ static inline void susfs_clear_current_proc_no_su(void) {
 		unlikely(test_bit(AS_FLAGS_OPEN_REDIRECT, &inode->i_state)) && \
 		susfs_is_current_proc_umounted_app()
 #endif // #ifndef KSU_SUSFS_DEF_H
+
+/* 5.4.254 没有 Android 的 VMA padding 支持，退化成普通边界 */
+#ifndef VMA_PAD_START
+#define VMA_PAD_START(vma) ((vma)->vm_start)
+#endif
+#ifndef VMA_PAD_END
+#define VMA_PAD_END(vma) ((vma)->vm_end)
+#endif
