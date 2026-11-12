@@ -10,6 +10,9 @@ on:
       susfs:
         type: boolean
         default: false
+      susfs_disable:
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -34,6 +37,7 @@ jobs:
         continue-on-error: true
         env:
           SUSFS: ${{ inputs.susfs && '1' || '0' }}
+          SUSFS_DISABLE: ${{ inputs.susfs_disable }}
         run: |
           set -o pipefail
           python3 scripts/build.py --device oneplus-9-pro --os ${{ inputs.os }} 2>&1 | tee build.log
