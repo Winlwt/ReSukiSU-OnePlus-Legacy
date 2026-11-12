@@ -116,7 +116,22 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
             kcfg.write_text("\n".join(kl) + "\n", encoding="utf-8")
             print("SUSFS moved out of hook choice", flush=True)
 
+    # SUSFS selects the same symbol namespace as the tracepoint branch, so the
+    # manual-hook branch must win whenever manual hooking is enabled.
+    ksu_int = source / "KernelSU" / "kernel" / "runtime" / "ksud_integration.c"
+    if ksu_int.exists():
+        text = ksu_int.read_text(encoding="utf-8")
+        old = "#elif defined(CONFIG_KSU_SUSFS)\n"
+        new = "#elif defined(CONFIG_KSU_SUSFS) && !defined(CONFIG_KSU_MANUAL_HOOK)\n"
+        if old in text and new not in text:
+            ksu_int.write_text(text.replace(old, new, 1), encoding="utf-8")
+            print("ksud_integration: manual hook branch preferred", flush=True)
 
+    fs_makefile = source / "fs" / "Makefile"
+    if fs_makefile.exists() and "susfs.o" not in fs_makefile.read_text(encoding="utf-8"):
+        with fs_makefile.open("a", encoding="utf-8") as stream:
+            stream.write("\nobj-$(CONFIG_KSU_SUSFS)\t+= susfs.o\n")
+        print("fs/Makefile: susfs.o registered", flush=True)
 
     for path, addition in (
         ("drivers/Makefile", "\nobj-$(CONFIG_KSU) += kernelsu/\n"),
