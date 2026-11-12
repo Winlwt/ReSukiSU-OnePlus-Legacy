@@ -1,129 +1,690 @@
-===== first errors =====
-90:Hunk #3 FAILED at 60.
-91:1 out of 3 hunks FAILED -- saving rejects to file fs/proc/fd.c.rej
-3924:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: fs] Error 2
-4681:make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
-4715:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: drivers] Error 2
-4717:make: *** [Makefile:190: sub-make] Error 2
+===== error lines =====
+6614:ld.lld: error: undefined symbol: susfs_is_uname_spoof_buffer_set
+6618:ld.lld: error: undefined symbol: susfs_is_sdcard_android_data_not_decrypted
+6626:ld.lld: error: undefined symbol: susfs_is_hide_sus_mnts_for_non_su_procs_enabled
+6634:ld.lld: error: undefined symbol: ksu_init_rc_hook
+6638:ld.lld: error: undefined symbol: susfs_set_avc_log_spoofing
+6642:ld.lld: error: undefined symbol: susfs_update_sus_kstat
+6646:ld.lld: error: undefined symbol: susfs_add_open_redirect
+6650:ld.lld: error: undefined symbol: susfs_set_hide_sus_mnts_for_non_su_procs
+6654:ld.lld: error: undefined symbol: susfs_start_sdcard_monitor_fn
+6658:ld.lld: error: undefined symbol: susfs_set_cmdline_or_bootconfig
+6662:ld.lld: error: undefined symbol: susfs_set_uname
+6666:ld.lld: error: undefined symbol: susfs_add_sus_map
+6670:ld.lld: error: undefined symbol: susfs_enable_log
+6674:ld.lld: error: undefined symbol: susfs_show_variant
+6678:ld.lld: error: undefined symbol: susfs_add_sus_path_loop
+6682:ld.lld: error: undefined symbol: susfs_show_version
+6686:ld.lld: error: undefined symbol: susfs_add_sus_path
+6690:ld.lld: error: undefined symbol: susfs_add_sus_kstat
+6694:ld.lld: error: undefined symbol: susfs_get_enabled_features
+6698:ld.lld: error: undefined symbol: susfs_spoof_uname
+6702:ld.lld: error: too many errors emitted, stopping now (use -error-limit=0 to see all errors)
+6703:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4/Makefile:1303: vmlinux] Error 1
+6705:make: *** [Makefile:190: sub-make] Error 2
 
-===== last 120 lines =====
-  CC      drivers/gpu/drm/drm_lease.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_oncell/synaptics_tcm_device.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_S3910/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_qcom.o
-  CC      drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_test_reporting.o
-  CC      drivers/gpu/drm/drm_writeback.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_oncell/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/synaptics_touch_panel_remote.o
-  AR      drivers/input/touchscreen/synaptics_dsx/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek_common.o
-  CC      drivers/gpu/drm/drm_client.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/synaptics_common.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_ic.o
-  CC      drivers/input/input-compat.o
-  CC      drivers/gpu/drm/drm_client_modeset.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/built-in.a
-  CC      drivers/iommu/iommu.o
-  CC      drivers/gpu/drm/drm_atomic_uapi.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_mp.o
-  CC      drivers/input/touchscreen/of_touchscreen.o
-  CC      drivers/gpu/drm/drm_hdcp.o
-  CC      drivers/iommu/iommu-traces.o
-  CC      drivers/irqchip/irqchip.o
-  CC      drivers/irqchip/irq-sun4i.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_fw.o
-  CC      drivers/gpu/drm/drm_ioc32.o
-  CC      drivers/irqchip/irq-sunxi-nmi.o
-  CC      drivers/iommu/iommu-sysfs.o
-  CC      drivers/irqchip/irq-gic.o
-  CC      drivers/gpu/drm/drm_gem_cma_helper.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_node.o
-  CC      drivers/iommu/dma-iommu.o
-  CC      drivers/irqchip/irq-gic-common.o
-  CC      drivers/irqchip/irq-gic-v2m.o
-  CC      drivers/gpu/drm/drm_gem_shmem_helper.o
-  CC      drivers/irqchip/irq-gic-v3.o
-  CC      drivers/iommu/msm_dma_iommu_mapping.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/built-in.a
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/util_interface/touch_interfaces.o
-  CC      drivers/gpu/drm/drm_panel.o
-  CC      drivers/iommu/io-pgtable.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_comon_api/touch_comon_api.o
-  CC      drivers/irqchip/irq-gic-v3-mbi.o
-  CC      drivers/gpu/drm/drm_of.o
-  CC      drivers/iommu/io-pgtable-arm-v7s.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_healthinfo/touchpanel_healthinfo.o
-  CC      drivers/irqchip/irq-gic-v3-its.o
-  CC      drivers/iommu/io-pgtable-arm.o
-  CC      drivers/gpu/drm/drm_mipi_dsi.o
-  CC      drivers/iommu/iova.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_healthinfo/touchpanel_exception.o
-  CC      drivers/irqchip/irq-gic-v3-its-platform-msi.o
-  CC      drivers/gpu/drm/drm_panel_orientation_quirks.o
-  CC      drivers/irqchip/irq-gic-v4.o
-  AR      drivers/gpu/drm/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_autotest/touchpanel_autotest.o
-  CC      drivers/irqchip/irq-gic-v3-its-pci-msi.o
-  AR      drivers/gpu/built-in.a
-  CC      drivers/iommu/io-pgtable-fast.o
-  CC      drivers/irqchip/irq-partition-percpu.o
--- BakaSU version code: 35259
--- BakaSU version name: v4.1.0-548d1dda
--- Supported Managers: KernelSU Official, KOWSU, BakaSU 
--- KERNEL_VERSION: 5.4
--- KERNEL_TYPE: GKI 1.0
--- BakaSU: using SuSFS Inline hook
--- You are using SUSFS, if you face any issues, please MAKE SURE you are using LATEST SUSFS KERNEL SIDE before submit issue to BakaSU.
--- We keep tracking simonpunk's latest changes, and don't maintain ANY backward compatibility for old version of susfs.
--- You lost ksu_handle_setresuid hook in your kernel
--- Please submit issue to your SUSFS patches author.
-/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/KernelSU/kernel/tools/inline_hook_check.mk:40: *** You should integrate BakaSU in your kernel. .  Stop.
-make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
-make[2]: *** Waiting for unfinished jobs....
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_prevention/touchpanel_prevention.o
-  CC      drivers/iommu/dma-mapping-fast.o
-  CC      drivers/input/input-mt.o
-  CC      drivers/irqchip/irq-mbigen.o
-  CC      drivers/irqchip/msm_show_resume_irq.o
-  CC      drivers/input/touchscreen/atmel_mxt_ts.o
-  CC      drivers/iommu/of_iommu.o
-  CC      drivers/irqchip/qcom-pdc.o
-  AR      drivers/irqchip/built-in.a
-  CC      drivers/iommu/arm-smmu.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_common_driver.o
-  CC      drivers/input/touchscreen/usbtouchscreen.o
-  CC      drivers/input/input-poller.o
-  CC      drivers/input/ff-core.o
-  CC      drivers/iommu/arm-smmu-impl.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_proc.o
-  CC      drivers/iommu/arm-smmu-qcom.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/tp_ioctl.o
-  CC      drivers/iommu/arm-smmu-debug.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/message_list.o
-  CC      drivers/input/ff-memless.o
-  CC      drivers/iommu/iommu-logger.o
-  CC      drivers/input/input-leds.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_pen/touch_pen_core.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_pen/touch_pen_algo.o
-  CC      drivers/input/evdev.o
-  AR      drivers/iommu/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_tui_support/touchpanel_tui_support.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_notify/touchpanel_event_notify.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/built-in.a
-  AR      drivers/input/touchscreen/built-in.a
-  AR      drivers/input/built-in.a
-make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: drivers] Error 2
-make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/obj'
+===== error context =====
+----- around line 6614 -----
+  AR      drivers/usb/built-in.a
+  AR      drivers/soc/qcom/built-in.a
+  AR      drivers/soc/built-in.a
+  AR      drivers/built-in.a
+  GEN     .version
+  CHK     include/generated/compile.h
+  LTO     vmlinux.o
+  MODPOST vmlinux.o
+WARNING: "embms_tm_multicast_recv" [vmlinux] is a static EXPORT_SYMBOL
+WARNING: "tsens_mtc_reset_history_counter" [vmlinux] is a static EXPORT_SYMBOL
+  MODINFO modules.builtin.modinfo
+  LD      .tmp_vmlinux.kallsyms1
+ld.lld: error: undefined symbol: susfs_is_uname_spoof_buffer_set
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x10238)
+
+ld.lld: error: undefined symbol: susfs_is_sdcard_android_data_not_decrypted
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x2FC08)
+----- around line 6618 -----
+  GEN     .version
+  CHK     include/generated/compile.h
+  LTO     vmlinux.o
+  MODPOST vmlinux.o
+WARNING: "embms_tm_multicast_recv" [vmlinux] is a static EXPORT_SYMBOL
+WARNING: "tsens_mtc_reset_history_counter" [vmlinux] is a static EXPORT_SYMBOL
+  MODINFO modules.builtin.modinfo
+  LD      .tmp_vmlinux.kallsyms1
+ld.lld: error: undefined symbol: susfs_is_uname_spoof_buffer_set
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x10238)
+
+ld.lld: error: undefined symbol: susfs_is_sdcard_android_data_not_decrypted
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x2FC08)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x2FC38)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x2FC48)
+----- around line 6626 -----
+ld.lld: error: undefined symbol: susfs_is_uname_spoof_buffer_set
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x10238)
+
+ld.lld: error: undefined symbol: susfs_is_sdcard_android_data_not_decrypted
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x2FC08)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x2FC38)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x2FC48)
+
+ld.lld: error: undefined symbol: susfs_is_hide_sus_mnts_for_non_su_procs_enabled
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x32918)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x32928)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x32938)
+----- around line 6634 -----
+>>>               vmlinux.o:(__jump_table+0x2FC38)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x2FC48)
+
+ld.lld: error: undefined symbol: susfs_is_hide_sus_mnts_for_non_su_procs_enabled
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x32918)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x32928)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x32938)
+
+ld.lld: error: undefined symbol: ksu_init_rc_hook
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x88D48)
+
+ld.lld: error: undefined symbol: susfs_set_avc_log_spoofing
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+----- around line 6638 -----
+ld.lld: error: undefined symbol: susfs_is_hide_sus_mnts_for_non_su_procs_enabled
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x32918)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x32928)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x32938)
+
+ld.lld: error: undefined symbol: ksu_init_rc_hook
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x88D48)
+
+ld.lld: error: undefined symbol: susfs_set_avc_log_spoofing
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_update_sus_kstat
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+----- around line 6642 -----
+>>>               vmlinux.o:(__jump_table+0x32928)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x32938)
+
+ld.lld: error: undefined symbol: ksu_init_rc_hook
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x88D48)
+
+ld.lld: error: undefined symbol: susfs_set_avc_log_spoofing
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_update_sus_kstat
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_open_redirect
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+----- around line 6646 -----
+ld.lld: error: undefined symbol: ksu_init_rc_hook
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x88D48)
+
+ld.lld: error: undefined symbol: susfs_set_avc_log_spoofing
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_update_sus_kstat
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_open_redirect
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_hide_sus_mnts_for_non_su_procs
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+----- around line 6650 -----
+ld.lld: error: undefined symbol: susfs_set_avc_log_spoofing
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_update_sus_kstat
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_open_redirect
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_hide_sus_mnts_for_non_su_procs
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_start_sdcard_monitor_fn
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+----- around line 6654 -----
+ld.lld: error: undefined symbol: susfs_update_sus_kstat
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_open_redirect
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_hide_sus_mnts_for_non_su_procs
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_start_sdcard_monitor_fn
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_cmdline_or_bootconfig
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+----- around line 6658 -----
+ld.lld: error: undefined symbol: susfs_add_open_redirect
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_hide_sus_mnts_for_non_su_procs
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_start_sdcard_monitor_fn
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_cmdline_or_bootconfig
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_uname
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+----- around line 6662 -----
+ld.lld: error: undefined symbol: susfs_set_hide_sus_mnts_for_non_su_procs
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_start_sdcard_monitor_fn
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_cmdline_or_bootconfig
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_uname
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_map
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+----- around line 6666 -----
+ld.lld: error: undefined symbol: susfs_start_sdcard_monitor_fn
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_cmdline_or_bootconfig
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_uname
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_map
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_enable_log
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+----- around line 6670 -----
+ld.lld: error: undefined symbol: susfs_set_cmdline_or_bootconfig
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_uname
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_map
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_enable_log
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_show_variant
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+----- around line 6674 -----
+ld.lld: error: undefined symbol: susfs_set_uname
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_map
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_enable_log
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_show_variant
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_path_loop
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+----- around line 6678 -----
+ld.lld: error: undefined symbol: susfs_add_sus_map
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_enable_log
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_show_variant
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_path_loop
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_show_version
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+----- around line 6682 -----
+ld.lld: error: undefined symbol: susfs_enable_log
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_show_variant
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_path_loop
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_show_version
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_path
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+----- around line 6686 -----
+ld.lld: error: undefined symbol: susfs_show_variant
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_path_loop
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_show_version
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_path
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_kstat
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+----- around line 6690 -----
+ld.lld: error: undefined symbol: susfs_add_sus_path_loop
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_show_version
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_path
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_kstat
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_get_enabled_features
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+----- around line 6694 -----
+ld.lld: error: undefined symbol: susfs_show_version
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_path
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_kstat
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_get_enabled_features
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_spoof_uname
+>>> referenced by sys.c:1255 (/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4/kernel/sys.c:1255)
+>>>               vmlinux.o:(__do_sys_newuname)
+----- around line 6698 -----
+ld.lld: error: undefined symbol: susfs_add_sus_path
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_kstat
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_get_enabled_features
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_spoof_uname
+>>> referenced by sys.c:1255 (/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4/kernel/sys.c:1255)
+>>>               vmlinux.o:(__do_sys_newuname)
+
+ld.lld: error: too many errors emitted, stopping now (use -error-limit=0 to see all errors)
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4/Makefile:1303: vmlinux] Error 1
+make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/obj'
+----- around line 6702 -----
+ld.lld: error: undefined symbol: susfs_add_sus_kstat
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_get_enabled_features
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_spoof_uname
+>>> referenced by sys.c:1255 (/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4/kernel/sys.c:1255)
+>>>               vmlinux.o:(__do_sys_newuname)
+
+ld.lld: error: too many errors emitted, stopping now (use -error-limit=0 to see all errors)
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4/Makefile:1303: vmlinux] Error 1
+make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/obj'
 make: *** [Makefile:190: sub-make] Error 2
-make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4'
+make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4'
 Traceback (most recent call last):
-  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 221, in <module>
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 241, in <module>
+----- around line 6703 -----
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_get_enabled_features
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_spoof_uname
+>>> referenced by sys.c:1255 (/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4/kernel/sys.c:1255)
+>>>               vmlinux.o:(__do_sys_newuname)
+
+ld.lld: error: too many errors emitted, stopping now (use -error-limit=0 to see all errors)
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4/Makefile:1303: vmlinux] Error 1
+make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/obj'
+make: *** [Makefile:190: sub-make] Error 2
+make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4'
+Traceback (most recent call last):
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 241, in <module>
     build(args.device, args.config, args.os, args.diagnostics_only)
-  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 189, in build
+----- around line 6705 -----
+
+ld.lld: error: undefined symbol: susfs_get_enabled_features
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_spoof_uname
+>>> referenced by sys.c:1255 (/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4/kernel/sys.c:1255)
+>>>               vmlinux.o:(__do_sys_newuname)
+
+ld.lld: error: too many errors emitted, stopping now (use -error-limit=0 to see all errors)
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4/Makefile:1303: vmlinux] Error 1
+make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/obj'
+make: *** [Makefile:190: sub-make] Error 2
+make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4'
+Traceback (most recent call last):
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 241, in <module>
+    build(args.device, args.config, args.os, args.diagnostics_only)
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 209, in build
+    run(*options, "-j" + str(os.cpu_count() or 2), "Image", env=env)
+
+===== hook / susfs / ksu messages =====
+5300:  CC      drivers/kernelsu/feature/adb_root.o
+5304:  CC      drivers/kernelsu/feature/selinux_hide.o
+5311:  CC      drivers/kernelsu/feature/module_load_filter.o
+5312:  CC      drivers/kernelsu/hook/setuid_hook.o
+5318:  CC      drivers/kernelsu/feature/dynamic_manager.o
+5323:  CC      drivers/kernelsu/manager/apk_sign.o
+5328:  CC      drivers/kernelsu/manager/throne_tracker.o
+5333:  CC      drivers/kernelsu/manager/manager.o
+5337:  CC      drivers/kernelsu/compat/kernel_compat.o
+5339:  CC      net/oplus_modules/oplus_dns_hook/oplus_dns_hook.o
+5341:  CC      drivers/kernelsu/infra/su_mount_ns.o
+5343:  AR      net/oplus_modules/oplus_dns_hook/built-in.a
+5346:  CC      drivers/kernelsu/infra/seccomp_cache.o
+5347:  CC      drivers/kernelsu/infra/file_wrapper.o
+5352:  CC      drivers/kernelsu/infra/event_queue.o
+5358:  CC      drivers/kernelsu/runtime/boot_event.o
+5361:  CC      drivers/kernelsu/runtime/ksud_integration.o
+5366:  CC      drivers/kernelsu/selinux/selinux.o
+5370:  CC      drivers/kernelsu/selinux/sepolicy.o
+5374:  CC      drivers/kernelsu/selinux/rules.o
+5378:  CC      drivers/kernelsu/sulog/event.o
+5383:  CC      drivers/kernelsu/sulog/fd.o
+5390:  CC      drivers/kernelsu/supercall/dispatch.o
+5393:  CC      drivers/kernelsu/supercall/perm.o
+5397:  CC      drivers/kernelsu/supercall/supercall.o
+5400:  CC      drivers/kernelsu/compat/apatch_conflict.o
+5402:  CC      drivers/kernelsu/hook/arm64/patch_memory.o
+5405:  CC      drivers/kernelsu/infra/symbol_resolver.o
+5409:  CC      drivers/kernelsu/hook/lsm_hooks.o
+5412:  AR      drivers/kernelsu/built-in.a
+6614:ld.lld: error: undefined symbol: susfs_is_uname_spoof_buffer_set
+6618:ld.lld: error: undefined symbol: susfs_is_sdcard_android_data_not_decrypted
+6626:ld.lld: error: undefined symbol: susfs_is_hide_sus_mnts_for_non_su_procs_enabled
+6634:ld.lld: error: undefined symbol: ksu_init_rc_hook
+6638:ld.lld: error: undefined symbol: susfs_set_avc_log_spoofing
+6642:ld.lld: error: undefined symbol: susfs_update_sus_kstat
+6646:ld.lld: error: undefined symbol: susfs_add_open_redirect
+6650:ld.lld: error: undefined symbol: susfs_set_hide_sus_mnts_for_non_su_procs
+6654:ld.lld: error: undefined symbol: susfs_start_sdcard_monitor_fn
+6658:ld.lld: error: undefined symbol: susfs_set_cmdline_or_bootconfig
+6662:ld.lld: error: undefined symbol: susfs_set_uname
+6666:ld.lld: error: undefined symbol: susfs_add_sus_map
+6670:ld.lld: error: undefined symbol: susfs_enable_log
+6674:ld.lld: error: undefined symbol: susfs_show_variant
+6678:ld.lld: error: undefined symbol: susfs_add_sus_path_loop
+6682:ld.lld: error: undefined symbol: susfs_show_version
+6686:ld.lld: error: undefined symbol: susfs_add_sus_path
+6690:ld.lld: error: undefined symbol: susfs_add_sus_kstat
+6694:ld.lld: error: undefined symbol: susfs_get_enabled_features
+6698:ld.lld: error: undefined symbol: susfs_spoof_uname
+
+===== last 150 lines =====
+  AR      drivers/usb/host/built-in.a
+  CC      drivers/usb/gadget/u_f.o
+  CC      drivers/soc/qcom/hwkm.o
+  CC      drivers/usb/storage/scsiglue.o
+  AR      drivers/usb/typec/altmodes/built-in.a
+  AR      drivers/usb/typec/mux/built-in.a
+  CC      drivers/usb/typec/tcpm/tcpm.o
+  AR      drivers/usb/gadget/built-in.a
+  CC      drivers/usb/typec/ucsi/ucsi.o
+  CC      drivers/soc/qcom/crypto-qti-hwkm.o
+  CC      drivers/usb/storage/protocol.o
+  CC      drivers/usb/typec/ucsi/trace.o
+  CC      drivers/soc/qcom/qcom_wdt_core.o
+  AR      drivers/usb/typec/tcpm/built-in.a
+  CC      drivers/usb/typec/class.o
+  CC      drivers/usb/typec/ucsi/ucsi_glink.o
+  CC      drivers/usb/storage/transport.o
+  CC      drivers/soc/qcom/qcom_soc_wdt.o
+  CC      drivers/usb/typec/mux.o
+  AR      drivers/usb/typec/ucsi/built-in.a
+  CC      drivers/usb/storage/usb.o
+  CC      drivers/soc/qcom/sys_pm_vx.o
+  CC      drivers/usb/typec/bus.o
+  CC      drivers/soc/qcom/plh_scmi.o
+  CC      drivers/usb/storage/initializers.o
+  CC      drivers/soc/qcom/sysmon_subsystem_stats.o
+  AR      drivers/usb/typec/built-in.a
+  CC      drivers/usb/storage/sierra_ms.o
+  CC      drivers/soc/qcom/memlat_scmi.o
+  CC      drivers/usb/storage/option_ms.o
+  CC      drivers/soc/qcom/rimps_memlat.o
+  CC      drivers/usb/storage/usual-tables.o
+  CC      drivers/soc/qcom/rimps_log.o
+  CC      drivers/soc/qcom/qfprom-sys.o
+  AR      drivers/usb/storage/built-in.a
+  AR      drivers/usb/built-in.a
+  AR      drivers/soc/qcom/built-in.a
+  AR      drivers/soc/built-in.a
+  AR      drivers/built-in.a
+  GEN     .version
+  CHK     include/generated/compile.h
+  LTO     vmlinux.o
+  MODPOST vmlinux.o
+WARNING: "embms_tm_multicast_recv" [vmlinux] is a static EXPORT_SYMBOL
+WARNING: "tsens_mtc_reset_history_counter" [vmlinux] is a static EXPORT_SYMBOL
+  MODINFO modules.builtin.modinfo
+  LD      .tmp_vmlinux.kallsyms1
+ld.lld: error: undefined symbol: susfs_is_uname_spoof_buffer_set
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x10238)
+
+ld.lld: error: undefined symbol: susfs_is_sdcard_android_data_not_decrypted
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x2FC08)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x2FC38)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x2FC48)
+
+ld.lld: error: undefined symbol: susfs_is_hide_sus_mnts_for_non_su_procs_enabled
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x32918)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x32928)
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x32938)
+
+ld.lld: error: undefined symbol: ksu_init_rc_hook
+>>> referenced by xarray.c
+>>>               vmlinux.o:(__jump_table+0x88D48)
+
+ld.lld: error: undefined symbol: susfs_set_avc_log_spoofing
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_update_sus_kstat
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_open_redirect
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_hide_sus_mnts_for_non_su_procs
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_start_sdcard_monitor_fn
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_cmdline_or_bootconfig
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_set_uname
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_map
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_enable_log
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_show_variant
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_path_loop
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_show_version
+>>> referenced by xarray.c
+>>>               vmlinux.o:(ksu_handle_initrc.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_path
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_add_sus_kstat
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_get_enabled_features
+>>> referenced by xarray.c
+>>>               vmlinux.o:(get_dbs_capacity_stub$3538139ffed97d4b20a566b1dcb51b3f.cfi_jt)
+
+ld.lld: error: undefined symbol: susfs_spoof_uname
+>>> referenced by sys.c:1255 (/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4/kernel/sys.c:1255)
+>>>               vmlinux.o:(__do_sys_newuname)
+
+ld.lld: error: too many errors emitted, stopping now (use -error-limit=0 to see all errors)
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4/Makefile:1303: vmlinux] Error 1
+make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/obj'
+make: *** [Makefile:190: sub-make] Error 2
+make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4'
+Traceback (most recent call last):
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 241, in <module>
+    build(args.device, args.config, args.os, args.diagnostics_only)
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 209, in build
     run(*options, "-j" + str(os.cpu_count() or 2), "Image", env=env)
   File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/project.py", line 25, in run
     subprocess.run(list(map(str, args)), cwd=cwd, env=env, check=True)
   File "/usr/lib/python3.10/subprocess.py", line 526, in run
     raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['make', '-C', '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4', 'O=/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/obj', 'ARCH=arm64', 'CC=clang', 'LD=ld.lld', 'AR=llvm-ar', 'NM=llvm-nm', 'OBJCOPY=llvm-objcopy', 'OBJDUMP=llvm-objdump', 'STRIP=llvm-strip', 'CLANG_TRIPLE=aarch64-linux-gnu-', 'CROSS_COMPILE=aarch64-linux-gnu-', 'CROSS_COMPILE_ARM32=arm-linux-gnueabi-', 'OPLUS_FEATURE_SECURE_GUARD=no', 'OPLUS_FEATURE_SECURE_ROOTGUARD=no', 'OPLUS_FEATURE_SECURE_MOUNTGUARD=no', 'OPLUS_FEATURE_SECURE_EXECGUARD=no', 'OPLUS_FEATURE_SECURE_KEYINTERFACESGUARD=no', '-j4', 'Image']' returned non-zero exit status 2.
+subprocess.CalledProcessError: Command '['make', '-C', '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/kernel/msm-5.4', 'O=/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112073941/obj', 'ARCH=arm64', 'CC=clang', 'LD=ld.lld', 'AR=llvm-ar', 'NM=llvm-nm', 'OBJCOPY=llvm-objcopy', 'OBJDUMP=llvm-objdump', 'STRIP=llvm-strip', 'CLANG_TRIPLE=aarch64-linux-gnu-', 'CROSS_COMPILE=aarch64-linux-gnu-', 'CROSS_COMPILE_ARM32=arm-linux-gnueabi-', 'OPLUS_FEATURE_SECURE_GUARD=no', 'OPLUS_FEATURE_SECURE_ROOTGUARD=no', 'OPLUS_FEATURE_SECURE_MOUNTGUARD=no', 'OPLUS_FEATURE_SECURE_EXECGUARD=no', 'OPLUS_FEATURE_SECURE_KEYINTERFACESGUARD=no', '-j4', 'Image']' returned non-zero exit status 2.
