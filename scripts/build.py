@@ -222,6 +222,9 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
             fragment += "\n" + "\n".join("# CONFIG_" + d + " is not set" for d in disable)
             fragment += "\nCONFIG_BOOTPARAM_HUNG_TASK_PANIC=y"
             print("SUSFS disabled features: " + ", ".join(disable), flush=True)
+    # A missing trailing newline would glue CONFIG_LOCALVERSION onto the last
+    # fragment line, silently dropping the release suffix.
+    fragment = fragment.rstrip("\n") + "\n"
     with (output / ".config").open("a", encoding="utf-8") as stream:
         stream.write("\n" + fragment)
         if module_trust:
@@ -256,7 +259,7 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
     run(*options, "-j" + str(os.cpu_count() or 2), "Image", env=env)
     actual_release = (output / "include/config/kernel.release").read_text().strip()
     if actual_release != release:
-        raise ValueError("Compiled kernel release differs from the requested daxiaamu release")
+        raise ValueError("Kernel release mismatch: expected %r, got %r" % (release, actual_release))
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
             summary.write("Kernel release: `" + actual_release + "`\n\n")
