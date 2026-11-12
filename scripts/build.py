@@ -137,14 +137,14 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
     ksu_init_c = source / "KernelSU" / "kernel" / "core" / "init.c"
     if want_susfs and ksu_init_c.exists():
         text = ksu_init_c.read_text(encoding="utf-8")
-        anchor = ("#elif defined(CONFIG_KSU_MANUAL_HOOK)\n"
-                  "// only lsm hook need call init\n"
-                  "#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 8, 0)\n"
-                  "    ksu_lsm_hook_built_in_init();\n"
-                  "#endif\n")
-        if anchor in text and "susfs_init();" not in text.split(anchor, 1)[1][:200]:
-            text = text.replace(anchor, anchor + "#ifdef CONFIG_KSU_SUSFS\n    susfs_init();\n#endif\n", 1)
-            ksu_init_c.write_text(text, encoding="utf-8")
+        at = text.find("ksu_hook_init")
+        marker = "#endif\n#elif defined(CONFIG_KSU_SUSFS)"
+        if at >= 0 and marker in text[at:] and "susfs_init();" not in text[at:].split(marker, 1)[0]:
+            head, tail = text[:at], text[at:]
+            tail = tail.replace(marker,
+                                "#endif\n#ifdef CONFIG_KSU_SUSFS\n    susfs_init();\n#endif\n"
+                                "#elif defined(CONFIG_KSU_SUSFS)", 1)
+            ksu_init_c.write_text(head + tail, encoding="utf-8")
             print("ksu core/init.c: susfs_init() forced for the manual hook branch", flush=True)
 
     fs_makefile = source / "fs" / "Makefile"
