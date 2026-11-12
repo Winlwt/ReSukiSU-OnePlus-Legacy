@@ -6,6 +6,7 @@ import pathlib
 import re
 import shutil
 import subprocess
+import time
 from kernel_release import SUFFIX, branded_release
 from resukisu_source import resolve as resolve_resukisu
 from toolchain import configure
@@ -14,16 +15,27 @@ from module_trust import install as install_module_trust, verify_embedded
 from project import ROOT, PATCHES, device, run, save, sha256
 
 def checkout(repo, commit, dest, shallow=True):
-    run("git", "init", "--quiet", dest)
-    run("git", "remote", "add", "origin", "https://github.com/" + repo + ".git", cwd=dest)
-    command = ["git", "fetch", "--no-tags"]
-    if shallow:
-        command += ["--depth=1"]
-    run(*command, "origin", commit, cwd=dest)
-    run("git", "checkout", "--detach", "FETCH_HEAD", cwd=dest)
-    actual = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=dest, text=True).strip()
-    if actual != commit:
-        raise ValueError("Source commit mismatch")
+    last = None
+    for attempt in range(4):
+        try:
+            if os.path.isdir(dest):
+                shutil.rmtree(dest)
+            run("git", "init", "--quiet", dest)
+            run("git", "remote", "add", "origin", "https://github.com/" + repo + ".git", cwd=dest)
+            command = ["git", "fetch", "--no-tags"]
+            if shallow:
+                command += ["--depth=1"]
+            run(*command, "origin", commit, cwd=dest)
+            run("git", "checkout", "--detach", "FETCH_HEAD", cwd=dest)
+            actual = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=dest, text=True).strip()
+            if actual != commit:
+                raise ValueError("Source commit mismatch")
+            return
+        except Exception as error:
+            last = error
+            print("checkout %s attempt %d failed: %s" % (repo, attempt + 1, error), flush=True)
+            time.sleep(10 + attempt * 15)
+    raise RuntimeError("checkout failed for " + repo + ": " + str(last))
 
 def build(name, config=None, rom='coloros', diagnostics_only=False):
     if os.name != "posix":
