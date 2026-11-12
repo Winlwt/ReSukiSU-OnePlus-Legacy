@@ -1,129 +1,297 @@
-===== first errors =====
-90:Hunk #3 FAILED at 60.
-91:1 out of 3 hunks FAILED -- saving rejects to file fs/proc/fd.c.rej
-3924:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: fs] Error 2
-4681:make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
-4715:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: drivers] Error 2
-4717:make: *** [Makefile:190: sub-make] Error 2
+===== error lines =====
+3270:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:1082:2: error: void function 'show_smap_vma' should not return a value [-Wreturn-type]
+3273:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:1150:10: error: use of undeclared identifier 'show_smap'; did you mean 'show_map'?
+3281:make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/scripts/Makefile.build:293: fs/proc/task_mmu.o] Error 1
+3282:make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/scripts/Makefile.build:572: fs/proc] Error 2
+3283:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/Makefile:1956: fs] Error 2
+3456:make: *** [Makefile:190: sub-make] Error 2
 
-===== last 120 lines =====
-  CC      drivers/gpu/drm/drm_lease.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_oncell/synaptics_tcm_device.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_S3910/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_qcom.o
-  CC      drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_test_reporting.o
-  CC      drivers/gpu/drm/drm_writeback.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_oncell/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/synaptics_touch_panel_remote.o
-  AR      drivers/input/touchscreen/synaptics_dsx/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek_common.o
-  CC      drivers/gpu/drm/drm_client.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/synaptics_common.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_ic.o
-  CC      drivers/input/input-compat.o
-  CC      drivers/gpu/drm/drm_client_modeset.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/built-in.a
-  CC      drivers/iommu/iommu.o
-  CC      drivers/gpu/drm/drm_atomic_uapi.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_mp.o
-  CC      drivers/input/touchscreen/of_touchscreen.o
-  CC      drivers/gpu/drm/drm_hdcp.o
-  CC      drivers/iommu/iommu-traces.o
-  CC      drivers/irqchip/irqchip.o
-  CC      drivers/irqchip/irq-sun4i.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_fw.o
-  CC      drivers/gpu/drm/drm_ioc32.o
-  CC      drivers/irqchip/irq-sunxi-nmi.o
-  CC      drivers/iommu/iommu-sysfs.o
-  CC      drivers/irqchip/irq-gic.o
-  CC      drivers/gpu/drm/drm_gem_cma_helper.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_node.o
-  CC      drivers/iommu/dma-iommu.o
-  CC      drivers/irqchip/irq-gic-common.o
-  CC      drivers/irqchip/irq-gic-v2m.o
-  CC      drivers/gpu/drm/drm_gem_shmem_helper.o
-  CC      drivers/irqchip/irq-gic-v3.o
-  CC      drivers/iommu/msm_dma_iommu_mapping.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/built-in.a
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/util_interface/touch_interfaces.o
-  CC      drivers/gpu/drm/drm_panel.o
-  CC      drivers/iommu/io-pgtable.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_comon_api/touch_comon_api.o
-  CC      drivers/irqchip/irq-gic-v3-mbi.o
-  CC      drivers/gpu/drm/drm_of.o
-  CC      drivers/iommu/io-pgtable-arm-v7s.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_healthinfo/touchpanel_healthinfo.o
-  CC      drivers/irqchip/irq-gic-v3-its.o
-  CC      drivers/iommu/io-pgtable-arm.o
-  CC      drivers/gpu/drm/drm_mipi_dsi.o
-  CC      drivers/iommu/iova.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_healthinfo/touchpanel_exception.o
-  CC      drivers/irqchip/irq-gic-v3-its-platform-msi.o
-  CC      drivers/gpu/drm/drm_panel_orientation_quirks.o
-  CC      drivers/irqchip/irq-gic-v4.o
-  AR      drivers/gpu/drm/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_autotest/touchpanel_autotest.o
-  CC      drivers/irqchip/irq-gic-v3-its-pci-msi.o
-  AR      drivers/gpu/built-in.a
-  CC      drivers/iommu/io-pgtable-fast.o
-  CC      drivers/irqchip/irq-partition-percpu.o
--- BakaSU version code: 35259
--- BakaSU version name: v4.1.0-548d1dda
--- Supported Managers: KernelSU Official, KOWSU, BakaSU 
--- KERNEL_VERSION: 5.4
--- KERNEL_TYPE: GKI 1.0
--- BakaSU: using SuSFS Inline hook
--- You are using SUSFS, if you face any issues, please MAKE SURE you are using LATEST SUSFS KERNEL SIDE before submit issue to BakaSU.
--- We keep tracking simonpunk's latest changes, and don't maintain ANY backward compatibility for old version of susfs.
--- You lost ksu_handle_setresuid hook in your kernel
--- Please submit issue to your SUSFS patches author.
-/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/KernelSU/kernel/tools/inline_hook_check.mk:40: *** You should integrate BakaSU in your kernel. .  Stop.
-make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
-make[2]: *** Waiting for unfinished jobs....
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_prevention/touchpanel_prevention.o
-  CC      drivers/iommu/dma-mapping-fast.o
-  CC      drivers/input/input-mt.o
-  CC      drivers/irqchip/irq-mbigen.o
-  CC      drivers/irqchip/msm_show_resume_irq.o
-  CC      drivers/input/touchscreen/atmel_mxt_ts.o
-  CC      drivers/iommu/of_iommu.o
-  CC      drivers/irqchip/qcom-pdc.o
-  AR      drivers/irqchip/built-in.a
-  CC      drivers/iommu/arm-smmu.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_common_driver.o
-  CC      drivers/input/touchscreen/usbtouchscreen.o
-  CC      drivers/input/input-poller.o
-  CC      drivers/input/ff-core.o
-  CC      drivers/iommu/arm-smmu-impl.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_proc.o
-  CC      drivers/iommu/arm-smmu-qcom.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/tp_ioctl.o
-  CC      drivers/iommu/arm-smmu-debug.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/message_list.o
-  CC      drivers/input/ff-memless.o
-  CC      drivers/iommu/iommu-logger.o
-  CC      drivers/input/input-leds.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_pen/touch_pen_core.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_pen/touch_pen_algo.o
-  CC      drivers/input/evdev.o
-  AR      drivers/iommu/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_tui_support/touchpanel_tui_support.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_notify/touchpanel_event_notify.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/built-in.a
-  AR      drivers/input/touchscreen/built-in.a
-  AR      drivers/input/built-in.a
-make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: drivers] Error 2
-make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/obj'
+===== error context =====
+----- around line 3270 -----
+  CC      kernel/trace/trace_sched_switch.o
+  CC      block/blk-flush.o
+  CC      crypto/ecb.o
+  CC      fs/proc/sched_info/osi_netlink.o
+  CC      crypto/cbc.o
+  CC      kernel/trace/trace_nop.o
+  CC      block/blk-settings.o
+  CC      crypto/cts.o
+  CC      kernel/trace/blktrace.o
+  AR      fs/proc/sched_info/built-in.a
+  CC      fs/proc/task_mmu.o
+  CC      crypto/xts.o
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:1082:2: error: void function 'show_smap_vma' should not return a value [-Wreturn-type]
+        return 0;
+        ^      ~
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:1150:10: error: use of undeclared identifier 'show_smap'; did you mean 'show_map'?
+        .show   = show_smap
+                  ^~~~~~~~~
+                  show_map
+----- around line 3273 -----
+  CC      fs/proc/sched_info/osi_netlink.o
+  CC      crypto/cbc.o
+  CC      kernel/trace/trace_nop.o
+  CC      block/blk-settings.o
+  CC      crypto/cts.o
+  CC      kernel/trace/blktrace.o
+  AR      fs/proc/sched_info/built-in.a
+  CC      fs/proc/task_mmu.o
+  CC      crypto/xts.o
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:1082:2: error: void function 'show_smap_vma' should not return a value [-Wreturn-type]
+        return 0;
+        ^      ~
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:1150:10: error: use of undeclared identifier 'show_smap'; did you mean 'show_map'?
+        .show   = show_smap
+                  ^~~~~~~~~
+                  show_map
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:474:12: note: 'show_map' declared here
+static int show_map(struct seq_file *m, void *v)
+           ^
+----- around line 3281 -----
+  CC      crypto/xts.o
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:1082:2: error: void function 'show_smap_vma' should not return a value [-Wreturn-type]
+        return 0;
+        ^      ~
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:1150:10: error: use of undeclared identifier 'show_smap'; did you mean 'show_map'?
+        .show   = show_smap
+                  ^~~~~~~~~
+                  show_map
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:474:12: note: 'show_map' declared here
+static int show_map(struct seq_file *m, void *v)
+           ^
+2 errors generated.
+make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/scripts/Makefile.build:293: fs/proc/task_mmu.o] Error 1
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/scripts/Makefile.build:572: fs/proc] Error 2
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/Makefile:1956: fs] Error 2
+make[1]: *** Waiting for unfinished jobs....
+  CC      kernel/tuning/frame_info.o
+  CC      block/blk-ioc.o
+  CC      crypto/ctr.o
+----- around line 3282 -----
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:1082:2: error: void function 'show_smap_vma' should not return a value [-Wreturn-type]
+        return 0;
+        ^      ~
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:1150:10: error: use of undeclared identifier 'show_smap'; did you mean 'show_map'?
+        .show   = show_smap
+                  ^~~~~~~~~
+                  show_map
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:474:12: note: 'show_map' declared here
+static int show_map(struct seq_file *m, void *v)
+           ^
+2 errors generated.
+make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/scripts/Makefile.build:293: fs/proc/task_mmu.o] Error 1
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/scripts/Makefile.build:572: fs/proc] Error 2
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/Makefile:1956: fs] Error 2
+make[1]: *** Waiting for unfinished jobs....
+  CC      kernel/tuning/frame_info.o
+  CC      block/blk-ioc.o
+  CC      crypto/ctr.o
+  CC      kernel/trace/trace_events.o
+----- around line 3283 -----
+        return 0;
+        ^      ~
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:1150:10: error: use of undeclared identifier 'show_smap'; did you mean 'show_map'?
+        .show   = show_smap
+                  ^~~~~~~~~
+                  show_map
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/fs/proc/task_mmu.c:474:12: note: 'show_map' declared here
+static int show_map(struct seq_file *m, void *v)
+           ^
+2 errors generated.
+make[3]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/scripts/Makefile.build:293: fs/proc/task_mmu.o] Error 1
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/scripts/Makefile.build:572: fs/proc] Error 2
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/Makefile:1956: fs] Error 2
+make[1]: *** Waiting for unfinished jobs....
+  CC      kernel/tuning/frame_info.o
+  CC      block/blk-ioc.o
+  CC      crypto/ctr.o
+  CC      kernel/trace/trace_events.o
+  CC      kernel/tuning/cluster_boost.o
+----- around line 3456 -----
+  CC      kernel/tracepoint.o
+  CC      kernel/irq_work.o
+  CC      kernel/cpu_pm.o
+  CC      kernel/scs.o
+  CC      kernel/cfi.o
+  CC      kernel/jump_label.o
+  CC      kernel/iomem.o
+  GZIP    kernel/config_data.gz
+  CC      kernel/configs.o
+  CC      kernel/kheaders.o
+  AR      kernel/built-in.a
+make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/obj'
 make: *** [Makefile:190: sub-make] Error 2
-make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4'
+make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4'
 Traceback (most recent call last):
-  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 221, in <module>
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 241, in <module>
     build(args.device, args.config, args.os, args.diagnostics_only)
-  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 189, in build
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 209, in build
+    run(*options, "-j" + str(os.cpu_count() or 2), "Image", env=env)
+
+===== hook / susfs / ksu messages =====
+32:Applying susfs patch BEFORE KernelSU patches
+57:installed header include/linux/susfs.h
+58:installed header include/linux/susfs_def.h
+59:installed header fs/susfs.c
+60:+ git init --quiet /home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4/KernelSU
+67:SUSFS moved out of hook choice
+136:OplusKernelEnvConfig.mk:127: make OPLUS_FEATURE_DNS_HOOK to be a macro here
+306:OplusKernelEnvConfig.mk:127: make OPLUS_FEATURE_DNS_HOOK to be a macro here
+353:  WRAP    arch/arm64/include/generated/asm/mm-arch-hooks.h
+1492:OplusKernelEnvConfig.mk:127: make OPLUS_FEATURE_DNS_HOOK to be a macro here
+1779:  CC      arch/arm64/kernel/secureguard/rootguard/oplus_security_hook.o
+1858:  CC      arch/arm64/kernel/secureguard/rootguard/oplus_hook_syscall.o
+2710:  CC      fs/crypto/hooks.o
+2935:  CC      security/selinux/hooks.o
+
+===== last 150 lines =====
+  CC      kernel/trace/trace_kprobe.o
+  CC      block/blk-mq-tag.o
+  CC      crypto/deflate.o
+  CC      kernel/trace/power-traces.o
+  CC      kernel/uad/ua_ioctl/ua_ioctl_common.o
+  CC      crypto/crc32c_generic.o
+  CC      kernel/uad/ua_ioctl/frame_ioctl.o
+  CC      block/blk-stat.o
+  CC      crypto/crc32_generic.o
+  CC      kernel/uad/ua_ioctl/touch_ioctl.o
+  CC      crypto/authenc.o
+  AR      kernel/uad/built-in.a
+  CC      kernel/fork.o
+  CC      kernel/trace/rpm-traces.o
+  CC      block/blk-mq-sysfs.o
+  CC      block/blk-mq-cpumap.o
+  CC      kernel/trace/trace_dynevent.o
+  CC      crypto/authencesn.o
+  CC      kernel/trace/trace_probe.o
+  CC      block/blk-mq-sched.o
+  CC      crypto/lzo.o
+  CC      block/ioctl.o
+  CC      crypto/lzo-rle.o
+  CC      kernel/trace/trace_uprobe.o
+  CC      crypto/lz4.o
+  CC      kernel/exec_domain.o
+  CC      crypto/rng.o
+  CC      kernel/trace/ipc_logging.o
+  CC      block/genhd.o
+  CC      kernel/panic.o
+  CC      crypto/ansi_cprng.o
+  AR      kernel/trace/built-in.a
+  CC      block/partition-generic.o
+  CC      kernel/cpu.o
+  CC      crypto/drbg.o
+  CC      block/ioprio.o
+  CC      crypto/jitterentropy.o
+  CC      crypto/jitterentropy-kcapi.o
+  CC      block/badblocks.o
+  CC      crypto/ghash-generic.o
+  CC      kernel/exit.o
+  CC      block/blk-rq-qos.o
+  CC      block/scsi_ioctl.o
+  CC      crypto/zstd.o
+  CC      kernel/softirq.o
+  CC      crypto/ecc.o
+  CC      block/bsg.o
+  CC      block/bsg-lib.o
+  CC      kernel/resource.o
+  CC      crypto/essiv.o
+  CC      crypto/ecdh.o
+  CC      block/blk-cgroup.o
+  CC      kernel/sysctl.o
+  CC      crypto/ecdh_helper.o
+  CC      crypto/hash_info.o
+  CC      crypto/simd.o
+  CC      block/blk-throttle.o
+  CC      crypto/rsapubkey.asn1.o
+  CC      crypto/rsaprivkey.asn1.o
+  AR      crypto/built-in.a
+  CC      kernel/sysctl_binary.o
+  CC      block/mq-deadline.o
+  CC      kernel/capability.o
+  CC      block/kyber-iosched.o
+  CC      kernel/ptrace.o
+  CC      block/bfq-iosched.o
+  CC      kernel/user.o
+  CC      block/bfq-wf2q.o
+  CC      block/bfq-cgroup.o
+  CC      kernel/signal.o
+  CC      block/compat_ioctl.o
+  CC      kernel/sys.o
+  CC      block/blk-mq-pci.o
+  CC      kernel/umh.o
+  CC      block/blk-mq-virtio.o
+  CC      kernel/workqueue.o
+  CC      block/blk-pm.o
+  CC      kernel/pid.o
+  CC      block/keyslot-manager.o
+  CC      kernel/task_work.o
+  CC      block/bio-crypt-ctx.o
+  CC      kernel/extable.o
+  CC      block/blk-crypto.o
+  CC      block/blk-crypto-fallback.o
+  CC      kernel/params.o
+  CC      kernel/kthread.o
+  CC      kernel/sys_ni.o
+  CC      kernel/nsproxy.o
+  AR      block/built-in.a
+  CC      kernel/notifier.o
+  CC      kernel/ksysfs.o
+  CC      kernel/cred.o
+  CC      kernel/reboot.o
+  CC      kernel/async.o
+  CC      kernel/range.o
+  CC      kernel/smpboot.o
+  CC      kernel/ucount.o
+  CC      kernel/kmod.o
+  CC      kernel/groups.o
+  CC      kernel/freezer.o
+  CC      kernel/profile.o
+  CC      kernel/stacktrace.o
+  CC      kernel/futex.o
+  CC      kernel/smp.o
+  CC      kernel/uid16.o
+  CC      kernel/module.o
+  CC      kernel/kallsyms.o
+  CC      kernel/compat.o
+  CC      kernel/utsname.o
+  CHK     kernel/kheaders_data.tar.xz
+  UPD     kernel/config_data
+  CC      kernel/stop_machine.o
+  GEN     kernel/kheaders_data.tar.xz
+  CC      kernel/audit.o
+  CC      kernel/auditfilter.o
+  CC      kernel/auditsc.o
+  CC      kernel/audit_watch.o
+  CC      kernel/audit_fsnotify.o
+  CC      kernel/audit_tree.o
+  CC      kernel/kprobes.o
+  CC      kernel/hung_task.o
+  CC      kernel/seccomp.o
+  CC      kernel/relay.o
+  CC      kernel/utsname_sysctl.o
+  CC      kernel/taskstats.o
+  CC      kernel/tsacct.o
+  CC      kernel/tracepoint.o
+  CC      kernel/irq_work.o
+  CC      kernel/cpu_pm.o
+  CC      kernel/scs.o
+  CC      kernel/cfi.o
+  CC      kernel/jump_label.o
+  CC      kernel/iomem.o
+  GZIP    kernel/config_data.gz
+  CC      kernel/configs.o
+  CC      kernel/kheaders.o
+  AR      kernel/built-in.a
+make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/obj'
+make: *** [Makefile:190: sub-make] Error 2
+make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4'
+Traceback (most recent call last):
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 241, in <module>
+    build(args.device, args.config, args.os, args.diagnostics_only)
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 209, in build
     run(*options, "-j" + str(os.cpu_count() or 2), "Image", env=env)
   File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/project.py", line 25, in run
     subprocess.run(list(map(str, args)), cwd=cwd, env=env, check=True)
   File "/usr/lib/python3.10/subprocess.py", line 526, in run
     raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['make', '-C', '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4', 'O=/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/obj', 'ARCH=arm64', 'CC=clang', 'LD=ld.lld', 'AR=llvm-ar', 'NM=llvm-nm', 'OBJCOPY=llvm-objcopy', 'OBJDUMP=llvm-objdump', 'STRIP=llvm-strip', 'CLANG_TRIPLE=aarch64-linux-gnu-', 'CROSS_COMPILE=aarch64-linux-gnu-', 'CROSS_COMPILE_ARM32=arm-linux-gnueabi-', 'OPLUS_FEATURE_SECURE_GUARD=no', 'OPLUS_FEATURE_SECURE_ROOTGUARD=no', 'OPLUS_FEATURE_SECURE_MOUNTGUARD=no', 'OPLUS_FEATURE_SECURE_EXECGUARD=no', 'OPLUS_FEATURE_SECURE_KEYINTERFACESGUARD=no', '-j4', 'Image']' returned non-zero exit status 2.
+subprocess.CalledProcessError: Command '['make', '-C', '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/kernel/msm-5.4', 'O=/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112072809/obj', 'ARCH=arm64', 'CC=clang', 'LD=ld.lld', 'AR=llvm-ar', 'NM=llvm-nm', 'OBJCOPY=llvm-objcopy', 'OBJDUMP=llvm-objdump', 'STRIP=llvm-strip', 'CLANG_TRIPLE=aarch64-linux-gnu-', 'CROSS_COMPILE=aarch64-linux-gnu-', 'CROSS_COMPILE_ARM32=arm-linux-gnueabi-', 'OPLUS_FEATURE_SECURE_GUARD=no', 'OPLUS_FEATURE_SECURE_ROOTGUARD=no', 'OPLUS_FEATURE_SECURE_MOUNTGUARD=no', 'OPLUS_FEATURE_SECURE_EXECGUARD=no', 'OPLUS_FEATURE_SECURE_KEYINTERFACESGUARD=no', '-j4', 'Image']' returned non-zero exit status 2.
