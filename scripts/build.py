@@ -75,7 +75,7 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
             target.symlink_to(os.readlink(item))
         else:
             shutil.copyfile(item, target)
-    susfs_patch = ROOT / "patches" / "susfs-5.4.patch"
+    susfs_patch = ROOT / "patches" / "susfs-v2.patch"
     if susfs_patch.exists():
         print("Applying susfs patch BEFORE KernelSU patches", flush=True)
         subprocess.run(["patch", "-p1", "-F3", "--forward", "-i", str(susfs_patch)],
@@ -91,7 +91,7 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
         if hdr.exists():
             shutil.copyfile(hdr, source / rel)
             print("installed header " + rel, flush=True)
-    for rel, fname in (("fs/proc/fd.c", "fs_proc_fd.c"),):
+    for rel, fname in ():
         override = ROOT / "patches" / "files" / fname
         if override.exists():
             shutil.copyfile(override, source / rel)
@@ -115,14 +115,6 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
                     break
             kcfg.write_text("\n".join(kl) + "\n", encoding="utf-8")
             print("SUSFS moved out of hook choice", flush=True)
-    compat = ROOT / "patches" / "files" / "susfs_compat.c"
-    if compat.exists():
-        shutil.copyfile(compat, source / "fs" / "susfs_compat.c")
-        mk = source / "fs" / "Makefile"
-        text = mk.read_text()
-        if "susfs_compat.o" not in text:
-            mk.write_text(text.rstrip() + "\nobj-$(CONFIG_KSU_SUSFS) += susfs_compat.o\n")
-        print("installed fs/susfs_compat.c", flush=True)
 
 
 
