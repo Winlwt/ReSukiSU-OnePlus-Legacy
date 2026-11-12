@@ -1,129 +1,501 @@
-===== first errors =====
-90:Hunk #3 FAILED at 60.
-91:1 out of 3 hunks FAILED -- saving rejects to file fs/proc/fd.c.rej
-3924:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: fs] Error 2
-4681:make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
-4715:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: drivers] Error 2
-4717:make: *** [Makefile:190: sub-make] Error 2
+===== error lines =====
+3692:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1649:65: error: use of undeclared identifier 'found_sus_path'
+3695:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1664:3: error: use of undeclared identifier 'found_sus_path'
+3698:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1665:8: error: use of undeclared label 'retry'
+3701:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1690:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+3704:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1746:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+3707:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1802:10: error: use of undeclared identifier 'found_sus_path'
+3710:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:6: error: use of undeclared identifier 'is_nd_flags_lookup_last'
+3713:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:34: error: use of undeclared identifier 'found_sus_path'
+3716:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1830:3: error: use of undeclared identifier 'found_sus_path'
+3719:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1804:12: error: use of undeclared label 'retry'
+3722:/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:3306:36: error: no member named 'state' in 'struct nameidata'
+3726:make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/scripts/Makefile.build:293: fs/namei.o] Error 1
+3727:make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/Makefile:1956: fs] Error 2
+5717:make: *** [Makefile:190: sub-make] Error 2
 
-===== last 120 lines =====
-  CC      drivers/gpu/drm/drm_lease.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_oncell/synaptics_tcm_device.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_S3910/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_qcom.o
-  CC      drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_test_reporting.o
-  CC      drivers/gpu/drm/drm_writeback.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/Syna_tcm_oncell/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/synaptics_touch_panel_remote.o
-  AR      drivers/input/touchscreen/synaptics_dsx/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek_common.o
-  CC      drivers/gpu/drm/drm_client.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/synaptics_common.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_ic.o
-  CC      drivers/input/input-compat.o
-  CC      drivers/gpu/drm/drm_client_modeset.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/Synaptics/built-in.a
-  CC      drivers/iommu/iommu.o
-  CC      drivers/gpu/drm/drm_atomic_uapi.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_mp.o
-  CC      drivers/input/touchscreen/of_touchscreen.o
-  CC      drivers/gpu/drm/drm_hdcp.o
-  CC      drivers/iommu/iommu-traces.o
-  CC      drivers/irqchip/irqchip.o
-  CC      drivers/irqchip/irq-sun4i.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_fw.o
-  CC      drivers/gpu/drm/drm_ioc32.o
-  CC      drivers/irqchip/irq-sunxi-nmi.o
-  CC      drivers/iommu/iommu-sysfs.o
-  CC      drivers/irqchip/irq-gic.o
-  CC      drivers/gpu/drm/drm_gem_cma_helper.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/ili7807s_node.o
-  CC      drivers/iommu/dma-iommu.o
-  CC      drivers/irqchip/irq-gic-common.o
-  CC      drivers/irqchip/irq-gic-v2m.o
-  CC      drivers/gpu/drm/drm_gem_shmem_helper.o
-  CC      drivers/irqchip/irq-gic-v3.o
-  CC      drivers/iommu/msm_dma_iommu_mapping.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/ilitek7807s/built-in.a
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/ilitek/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/util_interface/touch_interfaces.o
-  CC      drivers/gpu/drm/drm_panel.o
-  CC      drivers/iommu/io-pgtable.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_comon_api/touch_comon_api.o
-  CC      drivers/irqchip/irq-gic-v3-mbi.o
-  CC      drivers/gpu/drm/drm_of.o
-  CC      drivers/iommu/io-pgtable-arm-v7s.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_healthinfo/touchpanel_healthinfo.o
-  CC      drivers/irqchip/irq-gic-v3-its.o
-  CC      drivers/iommu/io-pgtable-arm.o
-  CC      drivers/gpu/drm/drm_mipi_dsi.o
-  CC      drivers/iommu/iova.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_healthinfo/touchpanel_exception.o
-  CC      drivers/irqchip/irq-gic-v3-its-platform-msi.o
-  CC      drivers/gpu/drm/drm_panel_orientation_quirks.o
-  CC      drivers/irqchip/irq-gic-v4.o
-  AR      drivers/gpu/drm/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_autotest/touchpanel_autotest.o
-  CC      drivers/irqchip/irq-gic-v3-its-pci-msi.o
-  AR      drivers/gpu/built-in.a
-  CC      drivers/iommu/io-pgtable-fast.o
-  CC      drivers/irqchip/irq-partition-percpu.o
--- BakaSU version code: 35259
--- BakaSU version name: v4.1.0-548d1dda
--- Supported Managers: KernelSU Official, KOWSU, BakaSU 
--- KERNEL_VERSION: 5.4
--- KERNEL_TYPE: GKI 1.0
--- BakaSU: using SuSFS Inline hook
--- You are using SUSFS, if you face any issues, please MAKE SURE you are using LATEST SUSFS KERNEL SIDE before submit issue to BakaSU.
--- We keep tracking simonpunk's latest changes, and don't maintain ANY backward compatibility for old version of susfs.
--- You lost ksu_handle_setresuid hook in your kernel
--- Please submit issue to your SUSFS patches author.
-/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/KernelSU/kernel/tools/inline_hook_check.mk:40: *** You should integrate BakaSU in your kernel. .  Stop.
-make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/scripts/Makefile.build:572: drivers/kernelsu] Error 2
-make[2]: *** Waiting for unfinished jobs....
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_prevention/touchpanel_prevention.o
-  CC      drivers/iommu/dma-mapping-fast.o
-  CC      drivers/input/input-mt.o
-  CC      drivers/irqchip/irq-mbigen.o
-  CC      drivers/irqchip/msm_show_resume_irq.o
-  CC      drivers/input/touchscreen/atmel_mxt_ts.o
-  CC      drivers/iommu/of_iommu.o
-  CC      drivers/irqchip/qcom-pdc.o
-  AR      drivers/irqchip/built-in.a
-  CC      drivers/iommu/arm-smmu.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_common_driver.o
-  CC      drivers/input/touchscreen/usbtouchscreen.o
-  CC      drivers/input/input-poller.o
-  CC      drivers/input/ff-core.o
-  CC      drivers/iommu/arm-smmu-impl.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_proc.o
-  CC      drivers/iommu/arm-smmu-qcom.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/tp_ioctl.o
-  CC      drivers/iommu/arm-smmu-debug.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/message_list.o
-  CC      drivers/input/ff-memless.o
-  CC      drivers/iommu/iommu-logger.o
-  CC      drivers/input/input-leds.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_pen/touch_pen_core.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touch_pen/touch_pen_algo.o
-  CC      drivers/input/evdev.o
-  AR      drivers/iommu/built-in.a
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_tui_support/touchpanel_tui_support.o
-  CC      drivers/input/touchscreen/oplus_touchscreen_v2/touchpanel_notify/touchpanel_event_notify.o
-  AR      drivers/input/touchscreen/oplus_touchscreen_v2/built-in.a
-  AR      drivers/input/touchscreen/built-in.a
-  AR      drivers/input/built-in.a
-make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4/Makefile:1956: drivers] Error 2
-make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/obj'
+===== error context =====
+----- around line 3692 -----
+  AR      sound/sparc/built-in.a
+  AR      sound/spi/built-in.a
+  AR      sound/synth/built-in.a
+  AR      sound/usb/6fire/built-in.a
+  CC      fs/namei.o
+  AR      sound/usb/bcd2000/built-in.a
+  AR      sound/usb/caiaq/built-in.a
+  AR      sound/usb/hiface/built-in.a
+  AR      sound/usb/misc/built-in.a
+  AR      sound/usb/usx2y/built-in.a
+  CC      sound/usb/card.o
+  CC      drivers/base/cacheinfo.o
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1649:65: error: use of undeclared identifier 'found_sus_path'
+        if (unlikely(dentry) && !IS_ERR(dentry) && dentry->d_inode && !found_sus_path && susfs_is_inode_sus_path(dentry->d_inode)) {
+                                                                       ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1664:3: error: use of undeclared identifier 'found_sus_path'
+                found_sus_path = true;
+                ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1665:8: error: use of undeclared label 'retry'
+----- around line 3695 -----
+  AR      sound/usb/6fire/built-in.a
+  CC      fs/namei.o
+  AR      sound/usb/bcd2000/built-in.a
+  AR      sound/usb/caiaq/built-in.a
+  AR      sound/usb/hiface/built-in.a
+  AR      sound/usb/misc/built-in.a
+  AR      sound/usb/usx2y/built-in.a
+  CC      sound/usb/card.o
+  CC      drivers/base/cacheinfo.o
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1649:65: error: use of undeclared identifier 'found_sus_path'
+        if (unlikely(dentry) && !IS_ERR(dentry) && dentry->d_inode && !found_sus_path && susfs_is_inode_sus_path(dentry->d_inode)) {
+                                                                       ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1664:3: error: use of undeclared identifier 'found_sus_path'
+                found_sus_path = true;
+                ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1665:8: error: use of undeclared label 'retry'
+                goto retry;
+                     ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1690:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+----- around line 3698 -----
+  AR      sound/usb/caiaq/built-in.a
+  AR      sound/usb/hiface/built-in.a
+  AR      sound/usb/misc/built-in.a
+  AR      sound/usb/usx2y/built-in.a
+  CC      sound/usb/card.o
+  CC      drivers/base/cacheinfo.o
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1649:65: error: use of undeclared identifier 'found_sus_path'
+        if (unlikely(dentry) && !IS_ERR(dentry) && dentry->d_inode && !found_sus_path && susfs_is_inode_sus_path(dentry->d_inode)) {
+                                                                       ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1664:3: error: use of undeclared identifier 'found_sus_path'
+                found_sus_path = true;
+                ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1665:8: error: use of undeclared label 'retry'
+                goto retry;
+                     ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1690:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+                if (is_nd_state_lookup_last_and_open_last && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                    ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1746:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+----- around line 3701 -----
+  AR      sound/usb/usx2y/built-in.a
+  CC      sound/usb/card.o
+  CC      drivers/base/cacheinfo.o
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1649:65: error: use of undeclared identifier 'found_sus_path'
+        if (unlikely(dentry) && !IS_ERR(dentry) && dentry->d_inode && !found_sus_path && susfs_is_inode_sus_path(dentry->d_inode)) {
+                                                                       ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1664:3: error: use of undeclared identifier 'found_sus_path'
+                found_sus_path = true;
+                ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1665:8: error: use of undeclared label 'retry'
+                goto retry;
+                     ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1690:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+                if (is_nd_state_lookup_last_and_open_last && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                    ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1746:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+                if (is_nd_state_lookup_last_and_open_last && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                    ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1802:10: error: use of undeclared identifier 'found_sus_path'
+----- around line 3704 -----
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1649:65: error: use of undeclared identifier 'found_sus_path'
+        if (unlikely(dentry) && !IS_ERR(dentry) && dentry->d_inode && !found_sus_path && susfs_is_inode_sus_path(dentry->d_inode)) {
+                                                                       ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1664:3: error: use of undeclared identifier 'found_sus_path'
+                found_sus_path = true;
+                ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1665:8: error: use of undeclared label 'retry'
+                goto retry;
+                     ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1690:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+                if (is_nd_state_lookup_last_and_open_last && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                    ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1746:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+                if (is_nd_state_lookup_last_and_open_last && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                    ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1802:10: error: use of undeclared identifier 'found_sus_path'
+                                        if (found_sus_path) {
+                                            ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:6: error: use of undeclared identifier 'is_nd_flags_lookup_last'
+----- around line 3707 -----
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1664:3: error: use of undeclared identifier 'found_sus_path'
+                found_sus_path = true;
+                ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1665:8: error: use of undeclared label 'retry'
+                goto retry;
+                     ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1690:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+                if (is_nd_state_lookup_last_and_open_last && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                    ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1746:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+                if (is_nd_state_lookup_last_and_open_last && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                    ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1802:10: error: use of undeclared identifier 'found_sus_path'
+                                        if (found_sus_path) {
+                                            ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:6: error: use of undeclared identifier 'is_nd_flags_lookup_last'
+        if (is_nd_flags_lookup_last && !found_sus_path && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+            ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:34: error: use of undeclared identifier 'found_sus_path'
+----- around line 3710 -----
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1665:8: error: use of undeclared label 'retry'
+                goto retry;
+                     ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1690:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+                if (is_nd_state_lookup_last_and_open_last && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                    ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1746:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+                if (is_nd_state_lookup_last_and_open_last && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                    ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1802:10: error: use of undeclared identifier 'found_sus_path'
+                                        if (found_sus_path) {
+                                            ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:6: error: use of undeclared identifier 'is_nd_flags_lookup_last'
+        if (is_nd_flags_lookup_last && !found_sus_path && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+            ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:34: error: use of undeclared identifier 'found_sus_path'
+        if (is_nd_flags_lookup_last && !found_sus_path && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                                        ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1830:3: error: use of undeclared identifier 'found_sus_path'
+----- around line 3713 -----
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1690:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+                if (is_nd_state_lookup_last_and_open_last && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                    ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1746:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+                if (is_nd_state_lookup_last_and_open_last && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                    ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1802:10: error: use of undeclared identifier 'found_sus_path'
+                                        if (found_sus_path) {
+                                            ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:6: error: use of undeclared identifier 'is_nd_flags_lookup_last'
+        if (is_nd_flags_lookup_last && !found_sus_path && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+            ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:34: error: use of undeclared identifier 'found_sus_path'
+        if (is_nd_flags_lookup_last && !found_sus_path && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                                        ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1830:3: error: use of undeclared identifier 'found_sus_path'
+                found_sus_path = true;
+                ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1804:12: error: use of undeclared label 'retry'
+----- around line 3716 -----
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1746:7: error: use of undeclared identifier 'is_nd_state_lookup_last_and_open_last'
+                if (is_nd_state_lookup_last_and_open_last && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                    ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1802:10: error: use of undeclared identifier 'found_sus_path'
+                                        if (found_sus_path) {
+                                            ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:6: error: use of undeclared identifier 'is_nd_flags_lookup_last'
+        if (is_nd_flags_lookup_last && !found_sus_path && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+            ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:34: error: use of undeclared identifier 'found_sus_path'
+        if (is_nd_flags_lookup_last && !found_sus_path && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                                        ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1830:3: error: use of undeclared identifier 'found_sus_path'
+                found_sus_path = true;
+                ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1804:12: error: use of undeclared label 'retry'
+                                                goto retry;
+                                                     ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:3306:36: error: no member named 'state' in 'struct nameidata'
+----- around line 3719 -----
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1802:10: error: use of undeclared identifier 'found_sus_path'
+                                        if (found_sus_path) {
+                                            ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:6: error: use of undeclared identifier 'is_nd_flags_lookup_last'
+        if (is_nd_flags_lookup_last && !found_sus_path && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+            ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:34: error: use of undeclared identifier 'found_sus_path'
+        if (is_nd_flags_lookup_last && !found_sus_path && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                                        ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1830:3: error: use of undeclared identifier 'found_sus_path'
+                found_sus_path = true;
+                ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1804:12: error: use of undeclared label 'retry'
+                                                goto retry;
+                                                     ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:3306:36: error: no member named 'state' in 'struct nameidata'
+        bool is_nd_state_open_last = (nd->state & ND_STATE_OPEN_LAST);
+                                      ~~  ^
+11 errors generated.
+----- around line 3722 -----
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:6: error: use of undeclared identifier 'is_nd_flags_lookup_last'
+        if (is_nd_flags_lookup_last && !found_sus_path && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+            ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1822:34: error: use of undeclared identifier 'found_sus_path'
+        if (is_nd_flags_lookup_last && !found_sus_path && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                                        ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1830:3: error: use of undeclared identifier 'found_sus_path'
+                found_sus_path = true;
+                ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1804:12: error: use of undeclared label 'retry'
+                                                goto retry;
+                                                     ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:3306:36: error: no member named 'state' in 'struct nameidata'
+        bool is_nd_state_open_last = (nd->state & ND_STATE_OPEN_LAST);
+                                      ~~  ^
+11 errors generated.
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/scripts/Makefile.build:293: fs/namei.o] Error 1
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/Makefile:1956: fs] Error 2
+make[1]: *** Waiting for unfinished jobs....
+----- around line 3726 -----
+        if (is_nd_flags_lookup_last && !found_sus_path && dentry && !IS_ERR(dentry) && dentry->d_inode &&
+                                        ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1830:3: error: use of undeclared identifier 'found_sus_path'
+                found_sus_path = true;
+                ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1804:12: error: use of undeclared label 'retry'
+                                                goto retry;
+                                                     ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:3306:36: error: no member named 'state' in 'struct nameidata'
+        bool is_nd_state_open_last = (nd->state & ND_STATE_OPEN_LAST);
+                                      ~~  ^
+11 errors generated.
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/scripts/Makefile.build:293: fs/namei.o] Error 1
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/Makefile:1956: fs] Error 2
+make[1]: *** Waiting for unfinished jobs....
+  CC      drivers/base/devcon.o
+  AR      sound/x86/built-in.a
+  CC      kernel/stop_machine.o
+  CC      sound/usb/clock.o
+----- around line 3727 -----
+                                        ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1830:3: error: use of undeclared identifier 'found_sus_path'
+                found_sus_path = true;
+                ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:1804:12: error: use of undeclared label 'retry'
+                                                goto retry;
+                                                     ^
+/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/fs/namei.c:3306:36: error: no member named 'state' in 'struct nameidata'
+        bool is_nd_state_open_last = (nd->state & ND_STATE_OPEN_LAST);
+                                      ~~  ^
+11 errors generated.
+make[2]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/scripts/Makefile.build:293: fs/namei.o] Error 1
+make[1]: *** [/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4/Makefile:1956: fs] Error 2
+make[1]: *** Waiting for unfinished jobs....
+  CC      drivers/base/devcon.o
+  AR      sound/x86/built-in.a
+  CC      kernel/stop_machine.o
+  CC      sound/usb/clock.o
+  CC      drivers/base/swnode.o
+----- around line 5717 -----
+  CC      drivers/soc/qcom/qcom_soc_wdt.o
+  CC      drivers/soc/qcom/sys_pm_vx.o
+  CC      drivers/soc/qcom/plh_scmi.o
+  CC      drivers/soc/qcom/sysmon_subsystem_stats.o
+  CC      drivers/soc/qcom/memlat_scmi.o
+  CC      drivers/soc/qcom/rimps_memlat.o
+  CC      drivers/soc/qcom/rimps_log.o
+  CC      drivers/soc/qcom/qfprom-sys.o
+  AR      drivers/soc/qcom/built-in.a
+  AR      drivers/soc/built-in.a
+  AR      drivers/built-in.a
+make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/obj'
 make: *** [Makefile:190: sub-make] Error 2
-make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4'
+make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4'
 Traceback (most recent call last):
-  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 221, in <module>
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 241, in <module>
     build(args.device, args.config, args.os, args.diagnostics_only)
-  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 189, in build
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 209, in build
+    run(*options, "-j" + str(os.cpu_count() or 2), "Image", env=env)
+
+===== hook / susfs / ksu messages =====
+3409:  CC      drivers/android/vendor_hooks.o
+3693:        if (unlikely(dentry) && !IS_ERR(dentry) && dentry->d_inode && !found_sus_path && susfs_is_inode_sus_path(dentry->d_inode)) {
+4467:-- ReSukiSU: using Manual Hook
+4468:-- ReSukiSU/manual_hook: You are using LSM hooks for setuid hooks.
+4469:-- ReSukiSU/manual_hook: You are using LSM hooks for init rc hooks.
+4470:-- ReSukiSU/manual_hook: You are using input_handler for input hooks.
+4471:-- ReSukiSU/manual_hook: ksu_handle_execveat found
+4472:-- ReSukiSU/manual_hook: ksu_handle_faccessat found
+4473:-- ReSukiSU/manual_hook: ksu_handle_stat found
+4474:-- ReSukiSU/manual_hook: ksu_handle_newfstat_ret found
+4475:-- ReSukiSU/manual_hook: ksu_handle_fstat64_ret found
+4476:-- ReSukiSU/manual_hook: ksu_handle_sys_reboot found
+4500:-- ReSukiSU/compat: found hlist in security_hook_list
+4503:-- ReSukiSU/compat: found security_add_hooks
+4504:-- ReSukiSU/compat: ksu_handle_post_execve hook not found
+4505:  CC      drivers/kernelsu/core/init.o
+4508:  CC      drivers/kernelsu/policy/allowlist.o
+4515:  CC      drivers/kernelsu/policy/app_profile.o
+4519:  CC      drivers/kernelsu/policy/feature.o
+4520:  CC      drivers/kernelsu/feature/sucompat.o
+4525:  CC      drivers/kernelsu/feature/kernel_umount.o
+4529:  CC      drivers/kernelsu/feature/sulog.o
+4532:  CC      drivers/kernelsu/feature/adb_root.o
+4537:  CC      drivers/kernelsu/feature/selinux_hide.o
+4543:  CC      drivers/kernelsu/feature/module_load_filter.o
+4548:  CC      drivers/kernelsu/hook/setuid_hook.o
+4552:  CC      drivers/kernelsu/feature/dynamic_manager.o
+4557:  CC      drivers/kernelsu/manager/apk_sign.o
+4562:  CC      drivers/kernelsu/manager/throne_tracker.o
+4566:  CC      drivers/kernelsu/manager/manager.o
+4572:  CC      drivers/kernelsu/compat/kernel_compat.o
+4576:  CC      drivers/kernelsu/infra/su_mount_ns.o
+4583:  CC      drivers/kernelsu/infra/seccomp_cache.o
+4584:  CC      drivers/kernelsu/infra/file_wrapper.o
+4586:  CC      drivers/kernelsu/infra/event_queue.o
+4590:  CC      drivers/kernelsu/runtime/boot_event.o
+4593:  CC      drivers/kernelsu/runtime/ksud_integration.o
+4598:  CC      drivers/kernelsu/selinux/selinux.o
+4602:  CC      drivers/kernelsu/selinux/sepolicy.o
+4604:  CC      drivers/kernelsu/selinux/rules.o
+4609:  CC      drivers/kernelsu/sulog/event.o
+4610:  CC      drivers/kernelsu/sulog/fd.o
+4614:  CC      drivers/kernelsu/supercall/dispatch.o
+4618:  CC      drivers/kernelsu/supercall/perm.o
+4622:  CC      drivers/kernelsu/supercall/supercall.o
+4631:  CC      drivers/kernelsu/compat/apatch_conflict.o
+4633:  CC      drivers/kernelsu/hook/arm64/patch_memory.o
+4634:  CC      drivers/kernelsu/infra/symbol_resolver.o
+4639:  CC      drivers/kernelsu/hook/lsm_hooks.o
+4644:  AR      drivers/kernelsu/built-in.a
+
+===== last 150 lines =====
+  AR      drivers/virt/vboxguest/built-in.a
+  CC      drivers/usb/gadget/udc/core.o
+  CC      drivers/soc/qcom/minidump_log.o
+  CC      drivers/usb/gadget/function/f_uac2.o
+  CC      drivers/virt/haven/hh_mem_notifier.o
+  CC      drivers/soc/qcom/mem-buf.o
+  CC      drivers/usb/gadget/function/f_midi.o
+  CC      drivers/virt/haven/hh_virt_wdt.o
+  AR      drivers/virt/haven/built-in.a
+  AR      drivers/virt/built-in.a
+  CC      drivers/usb/gadget/udc/trace.o
+  CC      drivers/soc/sunxi/sunxi_sram.o
+  CC      drivers/usb/gadget/function/f_hid.o
+  CC      drivers/usb/gadget/udc/dummy_hcd.o
+  AR      drivers/soc/sunxi/built-in.a
+  CC      drivers/virtio/virtio.o
+  CC      drivers/usb/gadget/function/f_accessory.o
+  CC      drivers/soc/qcom/mem_buf_dma_buf.o
+  AR      drivers/usb/gadget/udc/built-in.a
+  CC      drivers/soc/qcom/memory_dump_v2.o
+  CC      drivers/watchdog/watchdog_core.o
+  CC      drivers/virtio/virtio_ring.o
+  CC      drivers/usb/gadget/function/f_audio_source.o
+  CC      drivers/watchdog/watchdog_dev.o
+  CC      drivers/soc/qcom/dcc_v2.o
+  CC      drivers/usb/gadget/function/f_diag.o
+  AR      drivers/watchdog/built-in.a
+  CC      drivers/usb/host/pci-quirks.o
+  AR      drivers/virtio/built-in.a
+  CC      drivers/usb/misc/ehset.o
+  CC      drivers/soc/qcom/smcinvoke.o
+  CC      drivers/usb/misc/lvstest.o
+  CC      drivers/usb/gadget/function/f_qdss.o
+  CC      drivers/usb/host/ehci-hcd.o
+  CC      drivers/usb/misc/ssusb-redriver-nb7vpq904m.o
+  CC      drivers/soc/qcom/microdump_collector.o
+  CC      drivers/usb/gadget/function/u_qdss.o
+  AR      drivers/usb/misc/built-in.a
+  CC      drivers/soc/qcom/rpmhpd.o
+  CC      drivers/usb/gadget/function/f_ccid.o
+  CC      drivers/soc/qcom/qmp-debugfs-client.o
+  CC      drivers/usb/host/ehci-pci.o
+  CC      drivers/usb/gadget/function/f_cdev.o
+  CC      drivers/soc/qcom/smp2p_sleepstate.o
+  CC      drivers/usb/gadget/function/f_gsi.o
+  CC      drivers/usb/host/ehci-platform.o
+  CC      drivers/soc/qcom/sensors_ssc.o
+  CC      drivers/usb/gadget/usbstring.o
+  CC      drivers/usb/host/xhci.o
+  CC      drivers/soc/qcom/glink_pkt.o
+  CC      drivers/usb/gadget/config.o
+  CC      drivers/soc/qcom/qsee_ipc_irq.o
+  CC      drivers/soc/qcom/glink_probe.o
+  CC      drivers/usb/gadget/function/rndis.o
+  CC      drivers/usb/phy/phy.o
+  CC      drivers/soc/qcom/msm_glink_ssr.o
+  CC      drivers/usb/host/xhci-mem.o
+  CC      drivers/usb/phy/of.o
+  CC      drivers/soc/qcom/pmic_glink.o
+  AR      drivers/usb/gadget/function/built-in.a
+  CC      drivers/usb/gadget/epautoconf.o
+  CC      drivers/usb/phy/phy-generic.o
+  CC      drivers/soc/qcom/qti_battery_debug.o
+  CC      drivers/soc/qcom/altmode-glink.o
+  CC      drivers/usb/gadget/composite.o
+  CC      drivers/usb/host/xhci-ext-caps.o
+  CC      drivers/usb/phy/phy-qcom-emu.o
+  CC      drivers/soc/qcom/pmic-pon-log.o
+  CC      drivers/usb/phy/phy-msm-ssusb-qmp.o
+  CC      drivers/usb/host/xhci-ring.o
+  CC      drivers/soc/qcom/ddr_stats.o
+  CC      drivers/usb/gadget/functions.o
+  CC      drivers/usb/phy/phy-msm-snps-hs.o
+  CC      drivers/soc/qcom/system_pm.o
+  AR      drivers/usb/phy/built-in.a
+  CC      drivers/usb/gadget/configfs.o
+  AR      drivers/soc/ti/built-in.a
+  CC      drivers/usb/host/xhci-hub.o
+  CC      drivers/soc/qcom/spss_utils.o
+  CC      drivers/usb/roles/class.o
+  CC      drivers/soc/qcom/msm_performance.o
+  AR      drivers/usb/roles/built-in.a
+  CC      drivers/usb/host/xhci-dbg.o
+  AR      drivers/soc/xilinx/built-in.a
+  CC      drivers/usb/gadget/u_f.o
+  CC      drivers/soc/qcom/rpmh_master_stat.o
+  CC      drivers/usb/host/xhci-trace.o
+  AR      drivers/usb/gadget/built-in.a
+  CC      drivers/usb/storage/uas.o
+  AR      drivers/usb/typec/altmodes/built-in.a
+  AR      drivers/usb/typec/mux/built-in.a
+  CC      drivers/usb/typec/tcpm/tcpm.o
+  CC      drivers/soc/qcom/qpnp-pbs.o
+  CC      drivers/usb/storage/scsiglue.o
+  CC      drivers/soc/qcom/spcom.o
+  CC      drivers/usb/host/xhci-pci.o
+  AR      drivers/usb/typec/tcpm/built-in.a
+  CC      drivers/usb/typec/ucsi/ucsi.o
+  CC      drivers/soc/qcom/cdsprm.o
+  CC      drivers/usb/storage/protocol.o
+  CC      drivers/usb/typec/ucsi/trace.o
+  CC      drivers/soc/qcom/fsa4480-i2c.o
+  CC      drivers/usb/host/xhci-plat.o
+  CC      drivers/usb/storage/transport.o
+  CC      drivers/usb/typec/ucsi/ucsi_glink.o
+  AR      drivers/usb/host/built-in.a
+  CC      drivers/usb/typec/class.o
+  AR      drivers/usb/typec/ucsi/built-in.a
+  CC      drivers/usb/storage/usb.o
+  CC      drivers/soc/qcom/eud.o
+  CC      drivers/soc/qcom/guestvm_loader.o
+  CC      drivers/usb/storage/initializers.o
+  CC      drivers/usb/typec/mux.o
+  CC      drivers/soc/qcom/hyp_core_ctl.o
+  CC      drivers/usb/typec/bus.o
+  CC      drivers/usb/storage/sierra_ms.o
+  CC      drivers/soc/qcom/qbt_handler.o
+  AR      drivers/usb/typec/built-in.a
+  CC      drivers/usb/storage/option_ms.o
+  CC      drivers/soc/qcom/crypto-qti-common.o
+  CC      drivers/usb/storage/usual-tables.o
+  CC      drivers/soc/qcom/hwkm.o
+  CC      drivers/soc/qcom/crypto-qti-hwkm.o
+  AR      drivers/usb/storage/built-in.a
+  AR      drivers/usb/built-in.a
+  CC      drivers/soc/qcom/qcom_wdt_core.o
+  CC      drivers/soc/qcom/qcom_soc_wdt.o
+  CC      drivers/soc/qcom/sys_pm_vx.o
+  CC      drivers/soc/qcom/plh_scmi.o
+  CC      drivers/soc/qcom/sysmon_subsystem_stats.o
+  CC      drivers/soc/qcom/memlat_scmi.o
+  CC      drivers/soc/qcom/rimps_memlat.o
+  CC      drivers/soc/qcom/rimps_log.o
+  CC      drivers/soc/qcom/qfprom-sys.o
+  AR      drivers/soc/qcom/built-in.a
+  AR      drivers/soc/built-in.a
+  AR      drivers/built-in.a
+make[1]: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/obj'
+make: *** [Makefile:190: sub-make] Error 2
+make: Leaving directory '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4'
+Traceback (most recent call last):
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 241, in <module>
+    build(args.device, args.config, args.os, args.diagnostics_only)
+  File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/build.py", line 209, in build
     run(*options, "-j" + str(os.cpu_count() or 2), "Image", env=env)
   File "/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/scripts/project.py", line 25, in run
     subprocess.run(list(map(str, args)), cwd=cwd, env=env, check=True)
   File "/usr/lib/python3.10/subprocess.py", line 526, in run
     raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['make', '-C', '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/kernel/msm-5.4', 'O=/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261111191422/obj', 'ARCH=arm64', 'CC=clang', 'LD=ld.lld', 'AR=llvm-ar', 'NM=llvm-nm', 'OBJCOPY=llvm-objcopy', 'OBJDUMP=llvm-objdump', 'STRIP=llvm-strip', 'CLANG_TRIPLE=aarch64-linux-gnu-', 'CROSS_COMPILE=aarch64-linux-gnu-', 'CROSS_COMPILE_ARM32=arm-linux-gnueabi-', 'OPLUS_FEATURE_SECURE_GUARD=no', 'OPLUS_FEATURE_SECURE_ROOTGUARD=no', 'OPLUS_FEATURE_SECURE_MOUNTGUARD=no', 'OPLUS_FEATURE_SECURE_EXECGUARD=no', 'OPLUS_FEATURE_SECURE_KEYINTERFACESGUARD=no', '-j4', 'Image']' returned non-zero exit status 2.
+subprocess.CalledProcessError: Command '['make', '-C', '/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/kernel/msm-5.4', 'O=/home/runner/work/ReSukiSU-OnePlus-Legacy/ReSukiSU-OnePlus-Legacy/.work/oneplus-9-pro-20261112070727/obj', 'ARCH=arm64', 'CC=clang', 'LD=ld.lld', 'AR=llvm-ar', 'NM=llvm-nm', 'OBJCOPY=llvm-objcopy', 'OBJDUMP=llvm-objdump', 'STRIP=llvm-strip', 'CLANG_TRIPLE=aarch64-linux-gnu-', 'CROSS_COMPILE=aarch64-linux-gnu-', 'CROSS_COMPILE_ARM32=arm-linux-gnueabi-', 'OPLUS_FEATURE_SECURE_GUARD=no', 'OPLUS_FEATURE_SECURE_ROOTGUARD=no', 'OPLUS_FEATURE_SECURE_MOUNTGUARD=no', 'OPLUS_FEATURE_SECURE_EXECGUARD=no', 'OPLUS_FEATURE_SECURE_KEYINTERFACESGUARD=no', '-j4', 'Image']' returned non-zero exit status 2.
