@@ -75,8 +75,10 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
             target.symlink_to(os.readlink(item))
         else:
             shutil.copyfile(item, target)
+    want_susfs = os.environ.get("SUSFS") == "1"
+    print("SUSFS: " + ("enabled" if want_susfs else "disabled"), flush=True)
     susfs_patch = ROOT / "patches" / "susfs-v2.patch"
-    if susfs_patch.exists():
+    if want_susfs and susfs_patch.exists():
         print("Applying susfs patch BEFORE KernelSU patches", flush=True)
         subprocess.run(["patch", "-p1", "-F3", "--forward", "-i", str(susfs_patch)],
                        cwd=source, check=False, text=True)
@@ -87,6 +89,8 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
         subprocess.run(["patch", "-p1", "-F3", "--forward", "-i", str(compat_patch)], cwd=source, check=False)
     for rel, fname in (("include/linux/susfs.h", "susfs.h"), ("include/linux/susfs_def.h", "susfs_def.h"),
                        ("fs/susfs.c", "susfs.c")):
+        if not want_susfs:
+            break
         hdr = ROOT / "patches" / "files" / fname
         if hdr.exists():
             shutil.copyfile(hdr, source / rel)
@@ -128,7 +132,7 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
             print("ksud_integration: manual hook branch preferred", flush=True)
 
     fs_makefile = source / "fs" / "Makefile"
-    if fs_makefile.exists() and "susfs.o" not in fs_makefile.read_text(encoding="utf-8"):
+    if want_susfs and fs_makefile.exists() and "susfs.o" not in fs_makefile.read_text(encoding="utf-8"):
         with fs_makefile.open("a", encoding="utf-8") as stream:
             stream.write("\nobj-$(CONFIG_KSU_SUSFS)\t+= susfs.o\n")
         print("fs/Makefile: susfs.o registered", flush=True)
@@ -190,6 +194,10 @@ def build(name, config=None, rom='coloros', diagnostics_only=False):
                 with (output / ".config").open("a") as stream:
                     stream.write(translations[key] + "=" + value + "\n")
     fragment = (ROOT / "configs/resukisu.config").read_text(encoding="utf-8")
+    if not want_susfs:
+        fragment = "\n".join(
+            "# CONFIG_KSU_SUSFS is not set" if line.strip() == "CONFIG_KSU_SUSFS=y" else line
+            for line in fragment.splitlines())
     with (output / ".config").open("a", encoding="utf-8") as stream:
         stream.write("\n" + fragment)
         if module_trust:
