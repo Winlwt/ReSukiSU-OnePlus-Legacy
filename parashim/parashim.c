@@ -14,9 +14,21 @@
  *
  * 依赖的内核符号刻意压到最少（5.4 全部导出）：
  *   printk / __alloc_pages_nodemask / __close_fd / find_vma / current
- * 其余一律空实现或零内存，避免再次踩到"符号不存在"。
+ *
+ * 关键：5.4 的 <linux/gfp.h> 里有 3 参数的 static inline __alloc_pages，
+ * 与我们要导出的 4 参数版本同名冲突。所以在包含任何头文件之前先把
+ * 这些名字映射成占位名，包含完再 undef，这样头文件里看到的是占位名，
+ * 我们随后定义的同名符号就不会冲突。
  */
 #define pr_fmt(fmt) "parashim: " fmt
+
+/* ---- 头文件占位改名（必须在 include 之前）---- */
+#define _printk			__parashim_hdr_skip__printk
+#define __alloc_pages		__parashim_hdr_skip__alloc_pages
+#define close_fd		__parashim_hdr_skip_close_fd
+#define __find_vma		__parashim_hdr_skip__find_vma
+#define __cfi_slowpath_diag	__parashim_hdr_skip__cfi_slowpath_diag
+#define kasan_flag_enabled	__parashim_hdr_skip_kasan_flag_enabled
 
 #include <linux/module.h>
 #include <linux/kernel.h>
@@ -31,6 +43,14 @@
 #include <linux/gfp.h>
 #include <linux/vmalloc.h>
 
+/* ---- 解除占位，下面定义真正的导出符号 ---- */
+#undef _printk
+#undef __alloc_pages
+#undef close_fd
+#undef __find_vma
+#undef __cfi_slowpath_diag
+#undef kasan_flag_enabled
+
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("5.15 -> 5.4 symbol shim for paradise.ko");
 MODULE_VERSION("1.0");
@@ -38,7 +58,7 @@ MODULE_VERSION("1.0");
 /* ------------------------------------------------------------------ */
 /* 1. _printk                                                          */
 /*    5.15 把导出符号从 printk 改名成 _printk。5.4 导出的是 printk。    */
-/*    这里用 vsnprintf + printk，不碰 vprintk_emit（5.4/5.10 签名不同）*/
+/*    用 vsnprintf + printk，不碰 vprintk_emit（5.4/5.10 签名不同）。    */
 /* ------------------------------------------------------------------ */
 asmlinkage int _printk(const char *fmt, ...)
 {
@@ -57,7 +77,8 @@ EXPORT_SYMBOL(_printk);
 
 /* ------------------------------------------------------------------ */
 /* 2. __alloc_pages                                                    */
-/*    5.4 叫 __alloc_pages_nodemask；5.15 改名 __alloc_pages。签名一致 */
+/*    5.4 的 __alloc_pages_nodemask 是 4 参数；5.15 把它改名成         */
+/*    __alloc_pages。签名一致，直接转发。                              */
 /* ------------------------------------------------------------------ */
 struct page *__alloc_pages(gfp_t gfp, unsigned int order,
 			   int preferred_nid, nodemask_t *nodemask)
@@ -90,8 +111,8 @@ EXPORT_SYMBOL(__find_vma);
 
 /* ------------------------------------------------------------------ */
 /* 5. __cfi_slowpath_diag                                              */
-/*    5.4 只有 __cfi_slowpath，且不一定导出。做成空实现：              */
-/*    它只在 CFI 间接调用校验失败时被调用，空转不会影响正常路径。       */
+/*    5.4 只有 __cfi_slowpath 且不保证导出。做成空实现：               */
+/*    它只在 CFI 间接调用校验失败时被调用，空转不影响正常路径。         */
 /* ------------------------------------------------------------------ */
 void __cfi_slowpath_diag(u64 type_id, void *ptr, void *diag)
 {
@@ -101,8 +122,7 @@ EXPORT_SYMBOL(__cfi_slowpath_diag);
 /* ------------------------------------------------------------------ */
 /* 6~8. mmap_lock trace 包装                                           */
 /*    mmap_sem → mmap_lock 是 5.8 的事，5.4 没有这套设施。             */
-/*    只在 tracepoint 打开时才会被调用，而下面 9~11 的 static_key=0，   */
-/*    所以永远不会被执行。                                              */
+/*    只在 tracepoint 打开时才会被调用，而下面 9~11 的 static_key=0。   */
 /* ------------------------------------------------------------------ */
 void __mmap_lock_do_trace_start_locking(struct mm_struct *mm, bool write) { }
 EXPORT_SYMBOL(__mmap_lock_do_trace_start_locking);
