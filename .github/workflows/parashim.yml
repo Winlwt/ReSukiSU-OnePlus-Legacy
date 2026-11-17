@@ -1,0 +1,106 @@
+name: Build parashim shim (5.15 -> 5.4)
+
+# 给 paradise_5.15.ko 补 5.4 上缺失的 13 个符号
+# 做法：先跑正常的内核编译（为拿 Module.symvers / CRC），
+#       再用同一个 out/ 目录 out-of-tree 编 parashim.ko
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 150
+    env:
+      ROM: coloros
+      KBUILD_MODPOST_WARN: "1"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve model from branch
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          selector = Path("device.json")
+          if not selector.exists():
+              raise SystemExit("Select a oneplus-* model branch, not main")
+          device = json.loads(selector.read_text())["device"]
+          if device != os.environ["BRANCH"]:
+              raise SystemExit("Device selector does not match branch")
+          with open(os.environ["GITHUB_ENV"], "a") as f:
+              f.write("DEVICE=" + device + "\n")
+          PY
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang-14 llvm-14 lld-14 gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi build-essential bc bison flex libssl-dev libelf-dev libtinfo5 protobuf-c-compiler libprotobuf-c-dev dwarves python3
+          echo "/usr/lib/llvm-14/bin" >> "$GITHUB_PATH"
+
+      - name: Compile kernel (for Module.symvers)
+        run: python3 scripts/build.py --device "$DEVICE" --os "$ROM"
+
+      - name: Locate kernel work tree
+        run: |
+          set -e
+          WORK=$(ls -d .work/*/ | head -1)
+          echo "WORK=$WORK" >> "$GITHUB_ENV"
+          echo "found: $WORK"
+          ls -la "$WORK"
+          test -f "${WORK}kernel/msm-5.4/Makefile"
+          test -d "${WORK}obj"
+
+      - name: Build parashim.ko
+        run: |
+          set -euo pipefail
+          SRC="$GITHUB_WORKSPACE/${WORK}kernel/msm-5.4"
+          OUT="$GITHUB_WORKSPACE/${WORK}obj"
+          echo "SRC=$SRC"
+          echo "OUT=$OUT"
+          make -C "$SRC" O="$OUT" ARCH=arm64 \
+            CC=clang LD=ld.lld AR=llvm-ar NM=llvm-nm \
+            OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip \
+            CLANG_TRIPLE=aarch64-linux-gnu- \
+            CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
+            M="$GITHUB_WORKSPACE/parashim" modules
+          ls -l parashim/
+
+      - name: Verify exports and vermagic
+        run: |
+          set -e
+          python3 - <<'PY'
+          import re, subprocess, sys, struct
+          need = ["_printk","close_fd","gic_nonsecure_priorities",
+                  "__mmap_lock_do_trace_start_locking",
+                  "__mmap_lock_do_trace_acquire_returned",
+                  "__mmap_lock_do_trace_released",
+                  "__tracepoint_mmap_lock_start_locking",
+                  "__tracepoint_mmap_lock_acquire_returned",
+                  "__tracepoint_mmap_lock_released",
+                  "__alloc_pages","kasan_flag_enabled","__cfi_slowpath_diag","__find_vma"]
+          ko = "parashim/parashim.ko"
+          out = subprocess.run(["llvm-nm","-g","--defined-only",ko],
+                               capture_output=True, text=True).stdout
+          have = set(re.findall(r"\b([A-Za-z_][A-Za-z0-9_]*)$", out, re.M))
+          miss = [s for s in need if s not in have]
+          print("导出目标符号: %d / %d" % (len(need)-len(miss), len(need)))
+          if miss:
+              print("::error::缺少导出: " + ", ".join(miss))
+              sys.exit(1)
+          d = open(ko,"rb").read()
+          print("vermagic:", set(re.findall(rb"vermagic=[^\x00]{0,90}", d)))
+          print("size:", len(d))
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: parashim
+          path: parashim/parashim.ko
+          if-no-files-found: error
