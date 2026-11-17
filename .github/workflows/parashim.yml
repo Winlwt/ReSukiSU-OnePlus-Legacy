@@ -53,17 +53,19 @@ jobs:
           WORK=$(ls -d .work/*/ | head -1)
           echo "WORK=$WORK" >> "$GITHUB_ENV"
           echo "found: $WORK"
-          ls -la "$WORK"
           test -f "${WORK}kernel/msm-5.4/Makefile"
           test -d "${WORK}obj"
+          if [ -f "${WORK}obj/Module.symvers" ]; then
+            echo "Module.symvers: $(wc -l < "${WORK}obj/Module.symvers") 行"
+          else
+            echo "::warning::Module.symvers 不存在，parashim 的 __versions 会全是 0（后面会清空该段）"
+          fi
 
       - name: Build parashim.ko
         run: |
           set -euo pipefail
           SRC="$GITHUB_WORKSPACE/${WORK}kernel/msm-5.4"
           OUT="$GITHUB_WORKSPACE/${WORK}obj"
-          echo "SRC=$SRC"
-          echo "OUT=$OUT"
           make -C "$SRC" O="$OUT" ARCH=arm64 \
             CC=clang LD=ld.lld AR=llvm-ar NM=llvm-nm \
             OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip \
@@ -72,11 +74,59 @@ jobs:
             M="$GITHUB_WORKSPACE/parashim" modules
           ls -l parashim/
 
+      - name: Patch module (empty __versions, report layout)
+        run: |
+          python3 - <<'PY'
+          import struct, hashlib, sys
+
+          def sections(buf):
+              shoff = struct.unpack_from("<Q", buf, 0x28)[0]
+              esz = struct.unpack_from("<H", buf, 0x3a)[0]
+              n = struct.unpack_from("<H", buf, 0x3c)[0]
+              si = struct.unpack_from("<H", buf, 0x3e)[0]
+              out = []
+              for i in range(n):
+                  o = shoff + i * esz
+                  nm, typ, fl, addr, off, size, link, info, al, e2 = struct.unpack_from(
+                      "<IIQQQQIIQQ", buf, o)
+                  out.append(dict(o=o, nm=nm, typ=typ, off=off, size=size))
+              so, ss = out[si]["off"], out[si]["size"]
+              strb = bytes(buf[so:so + ss])
+              for s in out:
+                  s["name"] = strb[s["nm"]:].split(b"\0", 1)[0].decode("latin1")
+              return out
+
+          p = "parashim/parashim.ko"
+          d = bytearray(open(p, "rb").read())
+          assert d[0:4] == b"\x7fELF" and d[4] == 2, "不是 ELF64"
+
+          for s in sections(d):
+              if s["name"] == "__versions" and s["size"] > 0:
+                  print("__versions size=%d (%.0f 条) -> 置 0" % (s["size"], s["size"] / 64.0))
+                  struct.pack_into("<Q", d, s["o"] + 0x20, 0)
+          open(p, "wb").write(bytes(d))
+
+          d = open(p, "rb").read()
+          info = {s["name"]: s for s in sections(d)}
+          tm = info.get(".gnu.linkonce.this_module")
+          rela = info.get(".rela.gnu.linkonce.this_module")
+          offs = [struct.unpack_from("<Q", d, rela["off"] + k * 24)[0]
+                  for k in range(rela["size"] // 24)] if rela else []
+          tm_size = tm["size"] if tm else None
+          print("this_module = %s" % tm_size)
+          print("rela        = %s" % ["0x%x" % x for x in offs])
+          print("size        = %d" % len(d))
+          print("sha256      = %s" % hashlib.sha256(d).hexdigest())
+          if tm_size != 896 or offs != [0x178, 0x338]:
+              print("::error::布局不是 896/0x178/0x338")
+              sys.exit(1)
+          PY
+
       - name: Verify exports and vermagic
         run: |
           set -e
           python3 - <<'PY'
-          import re, subprocess, sys, struct
+          import re, subprocess, sys
           need = ["_printk","close_fd","gic_nonsecure_priorities",
                   "__mmap_lock_do_trace_start_locking",
                   "__mmap_lock_do_trace_acquire_returned",
@@ -96,7 +146,6 @@ jobs:
               sys.exit(1)
           d = open(ko,"rb").read()
           print("vermagic:", set(re.findall(rb"vermagic=[^\x00]{0,90}", d)))
-          print("size:", len(d))
           PY
 
       - uses: actions/upload-artifact@v4
